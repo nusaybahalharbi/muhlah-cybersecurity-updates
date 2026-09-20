@@ -6,7 +6,7 @@ export const samaSummary = { total: 237, closed: null, inProgress: null, notStar
 
 export const kpis: Kpi[] = [
   { label: "SAMA CSF", primary: "Target ML3", secondary: "Current: Needs Verification", tone: "teal", section: "sama" },
-  { label: "Cybersecurity Projects", primary: "12 tracked", secondary: "3 blocked / dependent", tone: "blue", section: "roadmap" },
+  { label: "Cybersecurity Projects", primary: "7 tracked", secondary: "1 blocked; dependencies visible", tone: "blue", section: "roadmap" },
   { label: "Critical Risks", primary: "Unrated", secondary: "Assign ratings in risk register", tone: "red", section: "risks" },
   { label: "Security Solutions", primary: "9 operational", secondary: "Qualys in procurement flow", tone: "violet", section: "stack" },
   { label: "Vulnerabilities", primary: "Needs Verification", secondary: "Critical / High / Medium / Low", tone: "amber", section: "stack" },
