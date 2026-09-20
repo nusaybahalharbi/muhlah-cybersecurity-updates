@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Muhlah Cybersecurity Updates
 
-## Getting Started
+> **CONFIDENTIAL – INTERNAL MUHLAH CYBERSECURITY USE ONLY**
 
-First, run the development server:
+Centralized cybersecurity governance, SAMA CSF readiness, security operations, infrastructure modernization, risk, compliance, project, and management reporting dashboard for Muhlah, a Saudi fintech.
+
+## Overview
+
+The Muhlah Cybersecurity Command Center gives the Cybersecurity Department, CEO, executive management, and Cybersecurity Committee a single decision-ready view of posture, delivery, risk, evidence, resources, and management attention.
+
+All initial content is planning/demo data derived from the project brief. Unverified facts are marked **Needs Verification** and risk ratings are **Unrated**. The application does not claim regulatory compliance or completed work without evidence.
+
+## Features
+
+- Executive KPI command center and management decision queue
+- SAMA CSF ML3 target, domain maturity, control register, and evidence mapping
+- Dynamic risk register and unrated risk matrix
+- Security stack, procurement portfolio, and vulnerability-management lifecycle
+- Network modernization and PT/Red Team dependency roadmap
+- Cloud, application, identity, endpoint, and BYOD assurance views
+- Third-party risk and outsourced call-center controls
+- BIA, BCP, DR, RTO/RPO, testing, and cyber-recovery tracking
+- JML workflow, awareness campaigns, hiring, and professional development
+- Integrated roadmap, global search, status badges, charts, and responsive layouts
+- Typed, maintainable data layer ready for a future authenticated API/database
+
+## Architecture
+
+Next.js App Router, TypeScript, Tailwind CSS, Recharts, and Lucide. UI code is under `components/`; editable business records are under `data/`; shared contracts are under `types/`. See `docs/ARCHITECTURE.md` and `docs/DATA-MODEL.md`.
+
+## Local installation
 
 ```bash
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000`. For production validation:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run lint
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Environment variables
 
-## Learn More
+Copy `.env.example` to `.env.local` and replace placeholders only in the local/runtime environment. Do not commit `.env.local`.
 
-To learn more about Next.js, take a look at the following resources:
+The authentication variables are architecture placeholders; production authentication is not implemented in this initial release.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Data updates
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Update validated records in `data/dashboard.ts`. Preserve the controlled statuses and use `Needs Verification` for uncertainty. Do not mark a capability `Operational` without implementation evidence. See `docs/UPDATING.md`.
 
-## Deploy on Vercel
+## Security requirements
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Keep the GitHub repository private.
+- Do not expose the dashboard publicly.
+- Do not commit credentials, secrets, internal IPs, VPN details, technical vulnerabilities, personal employee information, sensitive diagrams, or commercial amounts.
+- Add enterprise SSO/MFA, authorisation, audit logging, encryption, private networking, and approved data residency before production use.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+See `docs/SECURITY.md`.
+
+## Deployment
+
+No public deployment is configured or authorised. Deployment requires explicit approval and must be private by default. See `docs/DEPLOYMENT.md`.
+
+## Contribution and update process
+
+1. Create a focused branch.
+2. Validate source data and evidence with the responsible owner.
+3. Update typed records without overstating maturity or completion.
+4. Run lint and build checks.
+5. Request Cybersecurity review.
+6. Merge with a meaningful commit and retain traceability.
+
+## Roadmap
+
+Future releases should add enterprise authentication, role-based access, durable storage, change history, workflow approvals, exports, API integrations, notifications, and restricted operational drill-downs. See `docs/FUTURE-INTEGRATION.md` and the repository issues/milestones.
