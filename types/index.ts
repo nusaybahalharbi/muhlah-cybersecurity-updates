@@ -11,4 +11,13 @@ export interface Vendor { name: string; service: string; criticality: Rating; da
 export interface Project { name: string; workstream: string; status: Status; progress: number | null; owner: string; dueDate: string; dependency: string }
 export interface Action { issue: string; impact: string; decision: string; owner: string; deadline: string; status: Status }
 export interface RoadmapLane { name: string; stages: { label: string; status: Status }[] }
-export type SectionId = "overview" | "sama" | "risks" | "stack" | "infrastructure" | "third-parties" | "people" | "resilience" | "roadmap" | "data";
+export type SamaAssessmentStatus = "Completed" | "Partially Completed" | "In Progress" | "Not Started" | "Blocked / Waiting for Approval" | "Not Applicable" | "Requires Evidence / Verification";
+export interface SamaControlRecord {
+  id: string; familyId: string; sequence: string; domain: string; subdomain: string; name: string; requirement: string;
+  applicability: string; implementation: string; status: SamaAssessmentStatus; completion: number;
+  requiredEvidence: string[]; existingEvidence: string[]; missingEvidence: string[]; gap: string; requiredAction: string;
+  owner: string; priority: "Critical" | "High" | "Medium" | "Low"; targetDate: string; dependencies: string[];
+  notes: string; sourceMaturity: number | null; sourceStatus: string; capabilities: string[]; evidenceStatus: string;
+  evidenceOwner: string; evidenceLocation: string; dateCollected: string; reviewDate: string; expirationDate: string;
+}
+export type SectionId = "overview" | "sama" | "sama-controls" | "sama-evidence" | "sama-remediation" | "sama-mapping" | "risks" | "stack" | "infrastructure" | "third-parties" | "people" | "resilience" | "roadmap" | "data";

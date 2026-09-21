@@ -5,17 +5,17 @@ export const dataNotice = "Demo and planning data only. Unverified values are ex
 export const samaSummary = { total: 237, closed: null, inProgress: null, notStarted: null, blocked: null, notApplicable: null, completion: null, currentMaturity: null, targetMaturity: 3 };
 
 export const kpis: Kpi[] = [
-  { label: "SAMA CSF", primary: "Target ML3", secondary: "Current: Needs Verification", tone: "teal", section: "sama" },
+  { label: "SAMA CSF", primary: "28% assessed", secondary: "147 requirements • Target ML3", tone: "teal", section: "sama" },
   { label: "Cybersecurity Projects", primary: "7 tracked", secondary: "1 blocked; dependencies visible", tone: "blue", section: "roadmap" },
   { label: "Critical Risks", primary: "Unrated", secondary: "Assign ratings in risk register", tone: "red", section: "risks" },
-  { label: "Security Solutions", primary: "9 operational", secondary: "Qualys in procurement flow", tone: "violet", section: "stack" },
+  { label: "Security Solutions", primary: "8 operational", secondary: "ManageEngine starting • Qualys awaiting NOC", tone: "violet", section: "stack" },
   { label: "Vulnerabilities", primary: "Needs Verification", secondary: "Critical / High / Medium / Low", tone: "amber", section: "stack" },
   { label: "Incidents", primary: "Needs Verification", secondary: "Open / Closed / SLA breached", tone: "blue", section: "overview" },
   { label: "Third Parties", primary: "10 tracked", secondary: "Assessment status editable", tone: "violet", section: "third-parties" },
   { label: "Awareness", primary: "Needs Verification", secondary: "KnowBe4 campaign metrics", tone: "teal", section: "people" },
   { label: "Infrastructure", primary: "Segmentation", secondary: "Improvement in progress", tone: "amber", section: "infrastructure" },
   { label: "Documents / Evidence", primary: "Growing repository", secondary: "Readiness needs verification", tone: "blue", section: "sama" },
-  { label: "Hiring", primary: "Architecture on hold", secondary: "DFIR roles planned", tone: "red", section: "people" },
+  { label: "Hiring", primary: "1 DFIR planned", secondary: "Architecture capability via training", tone: "red", section: "people" },
   { label: "Training", primary: "Proposed", secondary: "SABSA / TOGAF evaluation", tone: "teal", section: "people" },
 ];
 
@@ -65,8 +65,8 @@ export const solutions: Solution[] = [
   { name:"Microsoft Security", capability:"DLP, sensitivity labels, email controls, external sender warning, Conditional Access / Intune", status:"Operational", owner:"IT / Cybersecurity", note:"Top Secret, Secret, Confidential, Internal, Public." },
   { name:"Fortinet / FortiGate", capability:"Perimeter firewall, VPN and secure connectivity", status:"Operational", owner:"IT", note:"Target state includes managed switching and segmentation." },
   { name:"BitRaser", capability:"Secure data and device wiping", status:"Operational", owner:"IT / Cybersecurity", note:"Maintain destruction evidence." },
-  { name:"ManageEngine ServiceDesk Plus", capability:"IT/security service workflows, JML and operational processes", status:"Operational", owner:"IT", note:"Workflow coverage should be reviewed." },
-  { name:"Qualys", capability:"Vulnerability scanning, prioritisation, reporting and remediation tracking", status:"In Progress", owner:"Cybersecurity", note:"Editable lifecycle: Approved / Procurement / Implementation / Operational." },
+  { name:"ManageEngine ServiceDesk Plus", capability:"IT/security service workflows, JML and operational processes", status:"In Progress", owner:"IT", note:"Implementation starts 21 September 2026." },
+  { name:"Qualys", capability:"Vulnerability scanning, prioritisation, reporting and remediation tracking", status:"Blocked", owner:"Cybersecurity", note:"Implementation completed; waiting for No Objection / NOC. This does not establish control compliance." },
 ];
 
 export const projects: Project[] = [
@@ -94,7 +94,7 @@ export const vendors: Vendor[] = [
 
 export const managementActions: Action[] = [
   { issue:"Network segmentation prerequisite", impact:"Delays meaningful internal VA and PT / Red Team validation", decision:"Confirm delivery ownership, dates and dependencies", owner:"COO / Technology", deadline:"Needs Verification", status:"In Progress" },
-  { issue:"Qualys implementation", impact:"Vulnerability metrics and remediation governance remain incomplete", decision:"Complete procurement / implementation path", owner:"Finance / Cybersecurity", deadline:"Needs Verification", status:"Pending Approval" },
+  { issue:"Qualys No Objection / NOC", impact:"Vulnerability-management implementation cannot be treated as fully approved or compliant", decision:"Track and obtain the required No Objection / NOC", owner:"Cybersecurity / Compliance", deadline:"Needs Verification", status:"Blocked" },
   { issue:"WAF improvement decision", impact:"Public application protection requires a confirmed target control", decision:"Approve proportionate WAF architecture and plan", owner:"Technology / Cybersecurity", deadline:"Needs Verification", status:"Planned" },
   { issue:"Architecture capability", impact:"HLD/LLD and target architecture maturity are constrained", decision:"Approve professional development and architecture governance plan", owner:"Management / HR", deadline:"Needs Verification", status:"Pending Approval" },
   { issue:"Senior Cybersecurity Architect role", impact:"Dedicated architecture capacity deferred", decision:"Maintain hold or revisit resourcing decision", owner:"Board / Management", deadline:"Needs Verification", status:"On Hold" },

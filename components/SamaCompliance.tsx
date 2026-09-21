@@ -1,0 +1,91 @@
+"use client";
+
+import { useMemo, useState } from "react";
+import { Cell, Pie, PieChart, ResponsiveContainer, Tooltip } from "recharts";
+import { AlertTriangle, ArrowUpRight, CheckCircle2, ChevronDown, Database, FileCheck2, Filter, Link2, Search, ShieldCheck, X } from "lucide-react";
+import rawControls from "@/data/sama-controls.json";
+import { SamaAssessmentStatus, SamaControlRecord } from "@/types";
+
+const controls = rawControls as SamaControlRecord[];
+const statuses: SamaAssessmentStatus[] = ["Completed","Partially Completed","In Progress","Not Started","Blocked / Waiting for Approval","Not Applicable","Requires Evidence / Verification"];
+const statusColor: Record<string,string> = {"Completed":"#4fffd2","Partially Completed":"#ffcb69","In Progress":"#65a2ff","Not Started":"#ff6b7a","Blocked / Waiting for Approval":"#b393ff","Not Applicable":"#8b99aa","Requires Evidence / Verification":"#ff9e5c"};
+const shortStatus: Record<string,string> = {"Blocked / Waiting for Approval":"Blocked / approval","Requires Evidence / Verification":"Evidence / verification"};
+const scoreWeight: Record<SamaAssessmentStatus,number> = {"Completed":100,"Partially Completed":60,"In Progress":40,"Not Started":0,"Blocked / Waiting for Approval":30,"Not Applicable":0,"Requires Evidence / Verification":20};
+
+function StatusPill({value}:{value:SamaAssessmentStatus}) { return <span className="sama-status" style={{"--status":statusColor[value]} as React.CSSProperties}><i/>{shortStatus[value]||value}</span> }
+function titleForDomain(name:string){ return name.replace("Cyber Security ","").replace(" and "," & ") }
+
+function useSummary(){ return useMemo(()=>{
+  const applicable=controls.filter(c=>c.status!=="Not Applicable");
+  const counts=Object.fromEntries(statuses.map(s=>[s,controls.filter(c=>c.status===s).length])) as Record<SamaAssessmentStatus,number>;
+  const completion=Math.round(applicable.reduce((sum,c)=>sum+c.completion,0)/Math.max(applicable.length,1));
+  const domains=[...new Set(controls.map(c=>c.domain))].map(domain=>{const rows=controls.filter(c=>c.domain===domain&&c.status!=="Not Applicable");return {domain,title:titleForDomain(domain),total:rows.length,completion:Math.round(rows.reduce((s,c)=>s+c.completion,0)/rows.length),evidenced:rows.filter(c=>c.existingEvidence.length>0).length}});
+  const families=new Set(controls.map(c=>c.familyId)).size;
+  const evidenceReady=controls.filter(c=>c.existingEvidence.length>0).length;
+  return {counts,completion,domains,families,evidenceReady,openGaps:applicable.filter(c=>c.status!=="Completed").length};
+},[]) }
+
+export function SamaExecutive(){
+  const s=useSummary();
+  const pie=statuses.filter(x=>s.counts[x]>0).map(name=>({name,value:s.counts[name]}));
+  const priority=controls.filter(c=>c.priority==="High"&&(c.status==="Not Started"||c.status==="Blocked / Waiting for Approval"||c.status==="In Progress")).slice(0,7);
+  return <div className="sama-module">
+    <div className="sama-hero"><div><p className="eyebrow">SAMA CSF / integrated assessment</p><h1>Compliance position</h1><p>Control-level assessment from the Muhlah SAMA CSF worksheet. Conservative scoring separates technology availability from evidenced compliance.</p><div className="source-chip"><Database size={14}/>147 control requirements · 36 families · 4 domains</div></div><div className="score-ring" style={{"--score":`${s.completion*3.6}deg`} as React.CSSProperties}><div><strong>{s.completion}%</strong><span>assessed progress</span><small>Not a compliance certification</small></div></div></div>
+    <div className="sama-kpis">{[
+      ["Total requirements",controls.length,"Workbook source"],["Completed",s.counts.Completed,"Fully evidenced"],["Partially completed",s.counts["Partially Completed"],"Implementation incomplete"],["In progress",s.counts["In Progress"],"Active remediation"],["Blocked / approval",s.counts["Blocked / Waiting for Approval"],"Includes Qualys NOC"],["Evidence / verification",s.counts["Requires Evidence / Verification"],"No validated conclusion"],["Not started",s.counts["Not Started"],"Capability not demonstrated"],["Evidence referenced",s.evidenceReady,"Links still require validation"]
+    ].map(([a,b,c])=><article key={a as string}><span>{a}</span><strong>{b}</strong><small>{c}</small></article>)}</div>
+    <div className="sama-grid two"><section className="sama-card"><header><div><p className="eyebrow">Domain performance</p><h2>Weighted progress</h2></div><span className="method-chip">ML3 target</span></header><div className="domain-bars">{s.domains.map(d=><div key={d.domain}><div><strong>{d.title}</strong><span>{d.completion}% · {d.total} requirements</span></div><div className="progress"><i style={{width:`${d.completion}%`}}/></div></div>)}</div></section>
+      <section className="sama-card"><header><div><p className="eyebrow">Assessment distribution</p><h2>Status mix</h2></div></header><div className="status-chart"><ResponsiveContainer width="48%" height={225}><PieChart><Pie data={pie} dataKey="value" innerRadius={57} outerRadius={82} paddingAngle={2}>{pie.map(p=><Cell key={p.name} fill={statusColor[p.name]}/>)}</Pie><Tooltip contentStyle={{background:"#09131f",border:"1px solid #26384d",borderRadius:10}}/></PieChart></ResponsiveContainer><div className="status-legend">{pie.map(p=><div key={p.name}><i style={{background:statusColor[p.name]}}/><span>{shortStatus[p.name]||p.name}</span><strong>{p.value}</strong></div>)}</div></div></section>
+    </div>
+    <div className="sama-grid two"><section className="sama-card"><header><div><p className="eyebrow">Management attention</p><h2>High-priority open items</h2></div><span className="count-chip">{priority.length} shown</span></header><div className="priority-list">{priority.map(c=><div key={c.id}><span>{c.id}</span><div><strong>{c.subdomain}</strong><small>{c.gap}</small></div><StatusPill value={c.status}/></div>)}</div></section>
+      <section className="sama-card"><header><div><p className="eyebrow">Calculation</p><h2>Transparent methodology</h2></div></header><div className="methodology"><p><strong>{s.completion}%</strong><span>Sum of requirement scores ÷ applicable requirements</span></p><div>{statuses.filter(s=>s!=="Not Applicable").map(st=><span key={st}><i style={{background:statusColor[st]}}/>{shortStatus[st]||st}<b>{scoreWeight[st]}%</b></span>)}</div><small>Not Applicable requirements are excluded. Evidence/verification is deliberately capped at 20%. Scores support remediation tracking and do not assert regulatory compliance.</small></div></section>
+    </div>
+  </div>
+}
+
+export function SamaControls(){
+  const [query,setQuery]=useState(""); const [domain,setDomain]=useState("All domains"); const [status,setStatus]=useState("All statuses"); const [priority,setPriority]=useState("All priorities"); const [selected,setSelected]=useState<SamaControlRecord|null>(null); const [page,setPage]=useState(1); const size=20;
+  const domains=["All domains",...new Set(controls.map(c=>c.domain))];
+  const filtered=useMemo(()=>controls.filter(c=>(domain==="All domains"||c.domain===domain)&&(status==="All statuses"||c.status===status)&&(priority==="All priorities"||c.priority===priority)&&(!query||[c.id,c.subdomain,c.requirement,c.owner,c.gap].join(" ").toLowerCase().includes(query.toLowerCase()))),[query,domain,status,priority]);
+  const pages=Math.max(1,Math.ceil(filtered.length/size)); const visible=filtered.slice((page-1)*size,page*size);
+  const change=(fn:(v:string)=>void)=>(e:React.ChangeEvent<HTMLSelectElement>)=>{fn(e.target.value);setPage(1)};
+  return <div className="sama-module"><ModuleTitle eyebrow="SAMA CSF compliance" title="Control assessment" text="Every workbook requirement with implementation, evidence, gap, ownership and remediation context." count={`${filtered.length} of ${controls.length}`}/>
+    <div className="control-toolbar"><label className="control-search"><Search size={16}/><input value={query} onChange={e=>{setQuery(e.target.value);setPage(1)}} placeholder="Search control, gap, owner or requirement"/></label><Select value={domain} values={domains} onChange={change(setDomain)}/><Select value={status} values={["All statuses",...statuses]} onChange={change(setStatus)}/><Select value={priority} values={["All priorities","High","Medium","Low"]} onChange={change(setPriority)}/></div>
+    <div className="sama-table-wrap"><table className="sama-table"><thead><tr><th>Control</th><th>Domain / family</th><th>Status</th><th>Progress</th><th>Evidence</th><th>Owner</th><th>Priority</th><th>Target</th></tr></thead><tbody>{visible.map(c=><tr key={c.id} onClick={()=>setSelected(c)}><td><strong>{c.id}</strong><span>{c.requirement}</span></td><td><strong>{c.subdomain}</strong><span>{titleForDomain(c.domain)}</span></td><td><StatusPill value={c.status}/></td><td><div className="mini-progress"><i style={{width:`${c.completion}%`}}/><span>{c.completion}%</span></div></td><td><strong>{c.existingEvidence.length}/{c.requiredEvidence.length||c.missingEvidence.length}</strong><span>{c.evidenceStatus}</span></td><td>{c.owner}</td><td><span className={`priority-tag ${c.priority.toLowerCase()}`}>{c.priority}</span></td><td>{c.targetDate}</td></tr>)}</tbody></table></div>
+    <div className="pagination"><span>Page {page} of {pages}</span><div><button disabled={page===1} onClick={()=>setPage(p=>p-1)}>Previous</button><button disabled={page===pages} onClick={()=>setPage(p=>p+1)}>Next</button></div></div>
+    {selected&&<ControlDrawer control={selected} onClose={()=>setSelected(null)}/>}</div>
+}
+
+export function SamaEvidence(){
+  const [query,setQuery]=useState(""); const rows=controls.filter(c=>!query||[c.id,c.subdomain,...c.requiredEvidence].join(" ").toLowerCase().includes(query.toLowerCase()));
+  const totals={required:controls.reduce((s,c)=>s+c.requiredEvidence.length,0),available:controls.reduce((s,c)=>s+c.existingEvidence.length,0),missing:controls.reduce((s,c)=>s+c.missingEvidence.length,0)};
+  return <div className="sama-module"><ModuleTitle eyebrow="SAMA audit readiness" title="Evidence management" text="Required, available and missing evidence mapped to each control requirement." count={`${totals.available} references to validate`}/><div className="evidence-kpis"><article><FileCheck2/><span>Required evidence items</span><strong>{totals.required}</strong></article><article><CheckCircle2/><span>Available references</span><strong>{totals.available}</strong></article><article><AlertTriangle/><span>Missing / verification items</span><strong>{totals.missing}</strong></article><article><Link2/><span>Evidence locations linked</span><strong>0</strong></article></div>
+    <div className="evidence-note"><ShieldCheck size={18}/><p>Evidence references from assessment narratives are not treated as validated files. Secure upload and durable links require the planned authenticated evidence backend.</p></div><div className="control-toolbar"><label className="control-search"><Search size={16}/><input value={query} onChange={e=>setQuery(e.target.value)} placeholder="Search evidence or control"/></label><span className="method-chip">{rows.length} controls</span></div>
+    <div className="evidence-list">{rows.slice(0,60).map(c=><article key={c.id}><header><div><strong>{c.id}</strong><span>{c.subdomain}</span></div><span className={`evidence-state ${c.existingEvidence.length?"pending":"missing"}`}>{c.existingEvidence.length?"Pending validation":"Missing"}</span></header><div className="evidence-columns"><div><h3>Required</h3>{(c.requiredEvidence.length?c.requiredEvidence:["Evidence requirement not specified in workbook; define with control owner"]).map((x,i)=><p key={i}>{x}</p>)}</div><div><h3>Available / referenced</h3>{(c.existingEvidence.length?c.existingEvidence:["No evidence recorded"]).map((x,i)=><p key={i}>{x}</p>)}</div><div><h3>Missing / pending</h3>{c.missingEvidence.map((x,i)=><p key={i}>{x}</p>)}</div></div><footer><span>Owner: {c.evidenceOwner}</span><span>Location: {c.evidenceLocation}</span><span>Review: {c.reviewDate}</span></footer></article>)}</div>{rows.length>60&&<p className="list-limit">Showing the first 60 matching controls. Narrow the search to inspect the remainder.</p>}</div>
+}
+
+export function SamaRemediation(){
+  const [status,setStatus]=useState("All statuses"); const [priority,setPriority]=useState("All priorities"); const [domain,setDomain]=useState("All domains");
+  const rows=controls.filter(c=>c.status!=="Completed"&&c.status!=="Not Applicable"&&(status==="All statuses"||c.status===status)&&(priority==="All priorities"||c.priority===priority)&&(domain==="All domains"||c.domain===domain));
+  return <div className="sama-module"><ModuleTitle eyebrow="SAMA action plan" title="Gap & remediation" text="Actionable closure plan sequenced by priority, dependency, progress and required evidence." count={`${rows.length} open actions`}/><div className="control-toolbar"><Filter size={16}/><Select value={domain} values={["All domains",...new Set(controls.map(c=>c.domain))]} onChange={e=>setDomain(e.target.value)}/><Select value={status} values={["All statuses",...statuses]} onChange={e=>setStatus(e.target.value)}/><Select value={priority} values={["All priorities","High","Medium","Low"]} onChange={e=>setPriority(e.target.value)}/></div><div className="remediation-board">{rows.map(c=><article key={c.id}><div className="remediation-id"><span>{c.id}</span><span className={`priority-tag ${c.priority.toLowerCase()}`}>{c.priority}</span></div><h2>{c.subdomain}</h2><p>{c.gap}</p><div className="remediation-action"><strong>Required action</strong><span>{c.requiredAction}</span></div><div className="remediation-progress"><div><i style={{width:`${c.completion}%`}}/></div><span>{c.completion}%</span></div><footer><span><b>Owner</b>{c.owner}</span><span><b>Target</b>{c.targetDate}</span><span><b>Dependency</b>{c.dependencies.join(", ")}</span><StatusPill value={c.status}/></footer></article>)}</div></div>
+}
+
+export function SamaMapping(){
+  const capabilities=[
+    ["Netskope","Implemented","Infrastructure Security","Application Security","Bring Your Own Device (BYOD)"],
+    ["KnowBe4","Implemented","Cyber Security Awareness","Cyber Security Training"],
+    ["BitRaser","Available","Secure Disposal of Information Assets"],
+    ["Dipu contract","Contract in place","Secure Disposal of Information Assets"],
+    ["ManageEngine","Implementation starts 21 Sep 2026","Asset Management"],
+    ["Qualys","Implemented · awaiting NOC","Vulnerability Management"],
+    ["DFIR capability","One specialist planned","Cyber Security Incident Management"],
+    ["Architecture capability","Training and certifications planned","Cyber Security Architecture"],
+  ];
+  return <div className="sama-module"><ModuleTitle eyebrow="Control enablement" title="Technology → SAMA mapping" text="Capabilities support controls; they do not prove implementation, operation, evidence or full compliance." count="8 capability groups"/><div className="mapping-warning"><AlertTriangle/><p><strong>Technology is an enabler, not a compliance conclusion.</strong> Each mapped control still requires approved process, configuration, operating evidence, ownership and effectiveness review.</p></div><div className="mapping-grid">{capabilities.map(([name,state,...subs])=>{const mapped=controls.filter(c=>subs.includes(c.subdomain));return <article key={name}><header><div className="tech-mark">{name.slice(0,2).toUpperCase()}</div><div><h2>{name}</h2><span>{state}</span></div><strong>{mapped.length}</strong></header><div className="mapping-flow"><span>Capability</span><ArrowUpRight/><span>{subs.length} control {subs.length===1?"family":"families"}</span><ArrowUpRight/><span>{mapped.length} requirements</span></div><div className="mapped-families">{subs.map(s=><span key={s}>{s}</span>)}</div><footer><span>Assessment state</span><strong>{mapped.filter(c=>c.status==="Partially Completed").length} partial · {mapped.filter(c=>c.status.includes("Evidence")).length} require verification</strong></footer></article>})}</div></div>
+}
+
+function ModuleTitle({eyebrow,title,text,count}:{eyebrow:string;title:string;text:string;count:string}){return <div className="module-title"><div><p className="eyebrow">{eyebrow}</p><h1>{title}</h1><p>{text}</p></div><span>{count}</span></div>}
+function Select({value,values,onChange}:{value:string;values:string[];onChange:(e:React.ChangeEvent<HTMLSelectElement>)=>void}){return <label className="select-control"><select value={value} onChange={onChange}>{values.map(v=><option key={v}>{v}</option>)}</select><ChevronDown size={14}/></label>}
+function ControlDrawer({control:c,onClose}:{control:SamaControlRecord;onClose:()=>void}){return <div className="drawer-backdrop" onClick={onClose}><aside className="control-drawer" onClick={e=>e.stopPropagation()}><header><div><p className="eyebrow">Control {c.id}</p><h2>{c.subdomain}</h2></div><button onClick={onClose}><X/></button></header><div className="drawer-status"><StatusPill value={c.status}/><span className={`priority-tag ${c.priority.toLowerCase()}`}>{c.priority}</span><strong>{c.completion}%</strong></div><Detail title="Requirement" text={c.requirement}/><Detail title="Muhlahlah implementation" text={c.implementation}/><Detail title="Gap" text={c.gap}/><Detail title="Required action" text={c.requiredAction}/><List title="Required evidence" items={c.requiredEvidence}/><List title="Existing evidence" items={c.existingEvidence}/><List title="Missing evidence" items={c.missingEvidence}/><div className="drawer-meta"><span><b>Owner</b>{c.owner}</span><span><b>Target date</b>{c.targetDate}</span><span><b>Applicability</b>{c.applicability}</span><span><b>Dependencies</b>{c.dependencies.join(", ")}</span></div><small className="source-note">{c.notes}</small></aside></div>}
+function Detail({title,text}:{title:string;text:string}){return <section className="drawer-section"><h3>{title}</h3><p>{text}</p></section>}
+function List({title,items}:{title:string;items:string[]}){return <section className="drawer-section"><h3>{title}</h3>{items.length?<ul>{items.map((x,i)=><li key={i}>{x}</li>)}</ul>:<p>None recorded.</p>}</section>}

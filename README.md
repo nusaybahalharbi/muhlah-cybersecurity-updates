@@ -13,7 +13,8 @@ All initial content is planning/demo data derived from the project brief. Unveri
 ## Features
 
 - Executive KPI command center and management decision queue
-- SAMA CSF ML3 target, domain maturity, control register, and evidence mapping
+- Workbook-backed SAMA CSF module with all 147 control requirements across 36 families and four domains
+- Executive SAMA progress, control-level assessment, evidence management, remediation and technology mapping
 - Dynamic risk register and unrated risk matrix
 - Security stack, procurement portfolio, and vulnerability-management lifecycle
 - Network modernization and PT/Red Team dependency roadmap
@@ -50,7 +51,11 @@ The authentication variables are architecture placeholders; production authentic
 
 ## Data updates
 
-Update validated records in `data/dashboard.ts`. Preserve the controlled statuses and use `Needs Verification` for uncertainty. Do not mark a capability `Operational` without implementation evidence. See `docs/UPDATING.md`.
+Update validated operational records in `data/dashboard.ts` and SAMA assessment records in `data/sama-controls.json`. Preserve the controlled statuses and use `Requires Evidence / Verification` for uncertainty. Do not mark a capability compliant because a product or contract exists. See `docs/UPDATING.md`.
+
+## SAMA assessment methodology
+
+The source workbook contains 147 atomic control requirements grouped into 36 control families. Progress is calculated across applicable requirements using: Completed 100%, Partially Completed 60%, In Progress 40%, Blocked / Waiting for Approval 30%, Requires Evidence / Verification 20%, and Not Started 0%. Not Applicable controls are excluded. The result is a remediation progress indicator—not a regulatory certification or formal compliance opinion.
 
 ## Security requirements
 
