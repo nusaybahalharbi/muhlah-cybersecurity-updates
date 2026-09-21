@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Muhlah Cybersecurity Command Center",
-  description: "Confidential internal cybersecurity governance and executive reporting dashboard.",
+  title: "Muhlah Cybersecurity Progress & Compliance Dashboard",
+  description: "Executive cybersecurity readiness, governance and SAMA CSF maturity reporting for Muhlah.",
   robots: { index: false, follow: false },
   icons: { icon: "/favicon.svg" },
 };
