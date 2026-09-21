@@ -998,18 +998,21 @@
     "name": "Cyber Security in Project Management",
     "requirement": "Cyber security should be integrated into the Member Organization's project management methodology to ensure that cyber security risks are identified and addressed as part of a project.",
     "applicability": "Applicable — requires validation",
-    "implementation": "Consequent to reviewing the evidences, it was noted that a Project Management Policy is in place; however, no formal Project Management Methodology had been established to define the processes for integrating Cyber Security requirements throughout the project lifecycle. \n\nAccordingly, the SecurEyes consultant developed a Project Management Methodology incorporating Cyber Security governance, secure development practices, and Cyber Security risk management activities across project initiation, design, development, implementation, testing, and deployment phases. At the time of the assessment, the Project Management Methodology was pending review and formal approval by Muhlah.\n\nEvidence demonstrating communication of the methodology to relevant departments and third parties, as well as its implementation through projects, was not available during the assessment.",
-    "status": "In Progress",
-    "completion": 40,
+    "implementation": "Consequent to reviewing the evidences, it was noted that a Project Management Policy is in place; however, no formal Project Management Methodology had been established to define the processes for integrating Cyber Security requirements throughout the project lifecycle. \n\nAccordingly, the SecurEyes consultant developed a Project Management Methodology incorporating Cyber Security governance, secure development practices, and Cyber Security risk management activities across project initiation, design, development, implementation, testing, and deployment phases. At the time of the assessment, the Project Management Methodology was pending review and formal approval by Muhlah.\n\nEvidence demonstrating communication of the methodology to relevant departments and third parties, as well as its implementation through projects, was not available during the assessment.\n\nInternal and external cybersecurity risk assessments are performed at the start and at the end of every project. Project-level assessment records and approvals must be linked and validated.",
+    "status": "Partially Completed",
+    "completion": 60,
     "requiredEvidence": [
       "Approved Project Management Methodology/ workflow, reflecting security controls/ guidelines"
     ],
     "existingEvidence": [
-      "Assessment narrative and referenced implementation activity in the source workbook — evidence link requires verification"
+      "Project risk assessments performed internally and externally at project start and closure — confirmed by Head of Cybersecurity; records require attachment"
     ],
     "missingEvidence": [
-      "Validate and link the requested evidence to this control",
-      "Confirm implementation and operating effectiveness"
+      "Approved project security and risk-assessment procedure",
+      "Project initiation risk-assessment records",
+      "Project closure risk-assessment records",
+      "Internal and external assessor reports",
+      "Risk-owner approvals and closure evidence"
     ],
     "gap": "A formally approved and implemented Project Management Methodology integrating Cyber Security requirements has not yet been established. Furthermore, evidence demonstrating communication of the methodology to relevant stakeholders and the implementation of Cyber Security controls and secure development practices throughout the project lifecycle was not available.",
     "requiredAction": "Muhlah should obtain formal management approval of the Project Management Methodology and communicate the approved methodology to all relevant departments and third parties involved in project delivery. Furthermore, Muhlah should implement the methodology across all applicable projects, ensuring Cyber Security governance, secure development practices, and Cyber Security risk management activities are integrated throughout the project lifecycle. Evidence of communication, project implementation, and compliance with the methodology should be maintained to demonstrate alignment with the applicable Saudi Central Bank (SAMA) Cyber Security Framework requirements.",
@@ -1040,18 +1043,21 @@
     "name": "Cyber Security in Project Management",
     "requirement": "The Member Organization’s project management methodology should ensure that:\n\na. Cyber security objectives are included in project objectives.\nb. The cyber security function is part of all phases of the project.\nc. A risk assessment is performed at the start of the project to determine the cyber security risks and to ensure that cyber security requirements are addressed either by the existing cyber security controls (based on cyber security standards) or to be developed.\nd. Cyber security risks are registered in the project-risk register and tracked.\ne. Responsibilities for cyber security are defined and allocated.\nf. Cyber security review is performed by an independent internal or external party.",
     "applicability": "Applicable — requires validation",
-    "implementation": "Consequent to reviewing the evidences, it was noted that the existing Project Management Policy did not define a formal Project Management Methodology to ensure the integration of Cyber Security requirements throughout the project lifecycle.\n\nAccordingly, the SecurEyes consultant developed a Project Management Methodology incorporating Cyber Security objectives, the involvement of the Cyber Security function across all project phases, Cyber Security risk assessment activities, project risk management, assignment of Cyber Security roles and responsibilities, and independent Cyber Security review requirements. \n\nAt the time of the assessment, the Project Management Methodology was pending review and formal approval by Muhlah.\n\n Furthermore, Cyber Security risk assessments for applicable projects and third-party engagements were in progress, and the resulting Cyber Security risks are intended to be recorded within the project risk register upon completion of the assessment process. Evidence demonstrating the alignment of project objectives with Cyber Security objectives, implementation of the approved methodology, communication to relevant stakeholders, and planning for independent Cyber Security reviews was not available during the assessment",
-    "status": "In Progress",
-    "completion": 40,
+    "implementation": "Consequent to reviewing the evidences, it was noted that the existing Project Management Policy did not define a formal Project Management Methodology to ensure the integration of Cyber Security requirements throughout the project lifecycle.\n\nAccordingly, the SecurEyes consultant developed a Project Management Methodology incorporating Cyber Security objectives, the involvement of the Cyber Security function across all project phases, Cyber Security risk assessment activities, project risk management, assignment of Cyber Security roles and responsibilities, and independent Cyber Security review requirements. \n\nAt the time of the assessment, the Project Management Methodology was pending review and formal approval by Muhlah.\n\n Furthermore, Cyber Security risk assessments for applicable projects and third-party engagements were in progress, and the resulting Cyber Security risks are intended to be recorded within the project risk register upon completion of the assessment process. Evidence demonstrating the alignment of project objectives with Cyber Security objectives, implementation of the approved methodology, communication to relevant stakeholders, and planning for independent Cyber Security reviews was not available during the assessment\n\nInternal and external cybersecurity risk assessments are performed at the start and at the end of every project. Project-level assessment records and approvals must be linked and validated.",
+    "status": "Partially Completed",
+    "completion": 60,
     "requiredEvidence": [
       "Approved Project Management Methodology/ workflow, reflecting security controls/ guidelines"
     ],
     "existingEvidence": [
-      "Assessment narrative and referenced implementation activity in the source workbook — evidence link requires verification"
+      "Project risk assessments performed internally and externally at project start and closure — confirmed by Head of Cybersecurity; records require attachment"
     ],
     "missingEvidence": [
-      "Validate and link the requested evidence to this control",
-      "Confirm implementation and operating effectiveness"
+      "Approved project security and risk-assessment procedure",
+      "Project initiation risk-assessment records",
+      "Project closure risk-assessment records",
+      "Internal and external assessor reports",
+      "Risk-owner approvals and closure evidence"
     ],
     "gap": "A formally approved and implemented Project Management Methodology integrating Cyber Security throughout the project lifecycle has not yet been established. Additionally, evidence demonstrating the implementation of Cyber Security risk assessments, alignment of project objectives with Cyber Security objectives, maintenance of project risk registers, and independent Cyber Security reviews was not available.",
     "requiredAction": "Muhlah should obtain formal management approval of the Project Management Methodology and implement the methodology across all applicable projects and third-party engagements. Furthermore, Muhlah should ensure that project objectives are aligned with Cyber Security objectives, Cyber Security risk assessments are completed and recorded in the project risk register, the methodology is communicated to all relevant stakeholders, and independent Cyber Security reviews are planned and conducted where applicable. Evidence of implementation, risk management activities, stakeholder communication, and independent Cyber Security reviews should be maintained to demonstrate compliance with the applicable Saudi Central Bank (SAMA) Cyber Security Framework requirements.",
@@ -1082,15 +1088,20 @@
     "name": "Cyber Security Awareness",
     "requirement": "The cyber security awareness programs should be defined, approved and conducted to promote cyber security awareness and to create a positive cyber security culture.",
     "applicability": "Applicable — requires validation",
-    "implementation": "KnowBe4 is implemented. Campaign configuration, completion, effectiveness metrics and evidence must be validated against this requirement.",
-    "status": "Requires Evidence / Verification",
-    "completion": 20,
+    "implementation": "KnowBe4 cybersecurity awareness has been completed for all employees. Completion reports, campaign scope, approvals and effectiveness metrics must be linked and validated for this control.",
+    "status": "Partially Completed",
+    "completion": 60,
     "requiredEvidence": [
       "List of Cyber Security Awareness Programs (including the target audience, and the channel type) conducted by the Cyber Security Function"
     ],
-    "existingEvidence": [],
+    "existingEvidence": [
+      "KnowBe4 awareness completed for all employees — confirmed by Head of Cybersecurity; platform completion report requires attachment"
+    ],
     "missingEvidence": [
-      "List of Cyber Security Awareness Programs (including the target audience, and the channel type) conducted by the Cyber Security Function"
+      "KnowBe4 completion export covering all employees",
+      "Approved awareness programme and campaign plan",
+      "Effectiveness metrics and periodic evaluation",
+      "Exceptions and remediation records where applicable"
     ],
     "gap": "Control-specific gap requires evidence-based assessment.",
     "requiredAction": "Validate implementation, document the gap, assign ownership and collect the required evidence.",
@@ -1106,7 +1117,7 @@
     "capabilities": [
       "KnowBe4"
     ],
-    "evidenceStatus": "Missing",
+    "evidenceStatus": "Pending",
     "evidenceOwner": "Cybersecurity",
     "evidenceLocation": "Not linked",
     "dateCollected": "",
@@ -1122,15 +1133,20 @@
     "name": "Cyber Security Awareness",
     "requirement": "Cyber security awareness program should be defined and conducted for:\n\na. Staff of the Member Organization.\nb. Third parties of the Member Organization.\nc. Customers of the Member Organization.",
     "applicability": "Applicable — requires validation",
-    "implementation": "KnowBe4 is implemented. Campaign configuration, completion, effectiveness metrics and evidence must be validated against this requirement.",
-    "status": "Requires Evidence / Verification",
-    "completion": 20,
+    "implementation": "KnowBe4 cybersecurity awareness has been completed for all employees. Completion reports, campaign scope, approvals and effectiveness metrics must be linked and validated for this control.",
+    "status": "Partially Completed",
+    "completion": 60,
     "requiredEvidence": [
       "List of Cyber Security Awareness Programs (including the target audience, and the channel type) conducted by the Cyber Security Function"
     ],
-    "existingEvidence": [],
+    "existingEvidence": [
+      "KnowBe4 awareness completed for all employees — confirmed by Head of Cybersecurity; platform completion report requires attachment"
+    ],
     "missingEvidence": [
-      "List of Cyber Security Awareness Programs (including the target audience, and the channel type) conducted by the Cyber Security Function"
+      "KnowBe4 completion export covering all employees",
+      "Approved awareness programme and campaign plan",
+      "Effectiveness metrics and periodic evaluation",
+      "Exceptions and remediation records where applicable"
     ],
     "gap": "Control-specific gap requires evidence-based assessment.",
     "requiredAction": "Validate implementation, document the gap, assign ownership and collect the required evidence.",
@@ -1146,7 +1162,7 @@
     "capabilities": [
       "KnowBe4"
     ],
-    "evidenceStatus": "Missing",
+    "evidenceStatus": "Pending",
     "evidenceOwner": "Cybersecurity",
     "evidenceLocation": "Not linked",
     "dateCollected": "",
@@ -1162,15 +1178,20 @@
     "name": "Cyber Security Awareness",
     "requirement": "The cyber security awareness program should target cyber security behaviors by tailoring the program to address the different target groups through multiple channels.",
     "applicability": "Applicable — requires validation",
-    "implementation": "KnowBe4 is implemented. Campaign configuration, completion, effectiveness metrics and evidence must be validated against this requirement.",
-    "status": "Requires Evidence / Verification",
-    "completion": 20,
+    "implementation": "KnowBe4 cybersecurity awareness has been completed for all employees. Completion reports, campaign scope, approvals and effectiveness metrics must be linked and validated for this control.",
+    "status": "Partially Completed",
+    "completion": 60,
     "requiredEvidence": [
       "List of Cyber Security Awareness Programs (including the target audience, and the channel type) conducted by the Cyber Security Function"
     ],
-    "existingEvidence": [],
+    "existingEvidence": [
+      "KnowBe4 awareness completed for all employees — confirmed by Head of Cybersecurity; platform completion report requires attachment"
+    ],
     "missingEvidence": [
-      "List of Cyber Security Awareness Programs (including the target audience, and the channel type) conducted by the Cyber Security Function"
+      "KnowBe4 completion export covering all employees",
+      "Approved awareness programme and campaign plan",
+      "Effectiveness metrics and periodic evaluation",
+      "Exceptions and remediation records where applicable"
     ],
     "gap": "Control-specific gap requires evidence-based assessment.",
     "requiredAction": "Validate implementation, document the gap, assign ownership and collect the required evidence.",
@@ -1186,7 +1207,7 @@
     "capabilities": [
       "KnowBe4"
     ],
-    "evidenceStatus": "Missing",
+    "evidenceStatus": "Pending",
     "evidenceOwner": "Cybersecurity",
     "evidenceLocation": "Not linked",
     "dateCollected": "",
@@ -1202,15 +1223,20 @@
     "name": "Cyber Security Awareness",
     "requirement": "The activities of the cyber security awareness program should be conducted periodically and throughout the year.",
     "applicability": "Applicable — requires validation",
-    "implementation": "KnowBe4 is implemented. Campaign configuration, completion, effectiveness metrics and evidence must be validated against this requirement.",
-    "status": "Requires Evidence / Verification",
-    "completion": 20,
+    "implementation": "KnowBe4 cybersecurity awareness has been completed for all employees. Completion reports, campaign scope, approvals and effectiveness metrics must be linked and validated for this control.",
+    "status": "Partially Completed",
+    "completion": 60,
     "requiredEvidence": [
       "List of Cyber Security Awareness Programs (including the target audience, and the channel type) conducted by the Cyber Security Function"
     ],
-    "existingEvidence": [],
+    "existingEvidence": [
+      "KnowBe4 awareness completed for all employees — confirmed by Head of Cybersecurity; platform completion report requires attachment"
+    ],
     "missingEvidence": [
-      "List of Cyber Security Awareness Programs (including the target audience, and the channel type) conducted by the Cyber Security Function"
+      "KnowBe4 completion export covering all employees",
+      "Approved awareness programme and campaign plan",
+      "Effectiveness metrics and periodic evaluation",
+      "Exceptions and remediation records where applicable"
     ],
     "gap": "Control-specific gap requires evidence-based assessment.",
     "requiredAction": "Validate implementation, document the gap, assign ownership and collect the required evidence.",
@@ -1226,7 +1252,7 @@
     "capabilities": [
       "KnowBe4"
     ],
-    "evidenceStatus": "Missing",
+    "evidenceStatus": "Pending",
     "evidenceOwner": "Cybersecurity",
     "evidenceLocation": "Not linked",
     "dateCollected": "",
@@ -1242,15 +1268,20 @@
     "name": "Cyber Security Awareness",
     "requirement": "The cyber security awareness program should at a minimum include:\n\na. An explanation of cyber security measures provided.\nb. The roles and responsibilities regarding cyber security.\nc. Information on relevant emerging cyber security events and cyber threats (e.g., spear-phishing, whaling).",
     "applicability": "Applicable — requires validation",
-    "implementation": "KnowBe4 is implemented. Campaign configuration, completion, effectiveness metrics and evidence must be validated against this requirement.",
-    "status": "Requires Evidence / Verification",
-    "completion": 20,
+    "implementation": "KnowBe4 cybersecurity awareness has been completed for all employees. Completion reports, campaign scope, approvals and effectiveness metrics must be linked and validated for this control.",
+    "status": "Partially Completed",
+    "completion": 60,
     "requiredEvidence": [
       "List of activities conducted during all of the Cyber Security Awareness Programs"
     ],
-    "existingEvidence": [],
+    "existingEvidence": [
+      "KnowBe4 awareness completed for all employees — confirmed by Head of Cybersecurity; platform completion report requires attachment"
+    ],
     "missingEvidence": [
-      "List of activities conducted during all of the Cyber Security Awareness Programs"
+      "KnowBe4 completion export covering all employees",
+      "Approved awareness programme and campaign plan",
+      "Effectiveness metrics and periodic evaluation",
+      "Exceptions and remediation records where applicable"
     ],
     "gap": "Control-specific gap requires evidence-based assessment.",
     "requiredAction": "Validate implementation, document the gap, assign ownership and collect the required evidence.",
@@ -1266,7 +1297,7 @@
     "capabilities": [
       "KnowBe4"
     ],
-    "evidenceStatus": "Missing",
+    "evidenceStatus": "Pending",
     "evidenceOwner": "Cybersecurity",
     "evidenceLocation": "Not linked",
     "dateCollected": "",
@@ -1282,15 +1313,20 @@
     "name": "Cyber Security Awareness",
     "requirement": "The cyber security awareness program should be evaluated to:\n\na. Measure the effectiveness of the awareness activities.\nb. Formulate recommendations to improve the cyber security awareness program.",
     "applicability": "Applicable — requires validation",
-    "implementation": "KnowBe4 is implemented. Campaign configuration, completion, effectiveness metrics and evidence must be validated against this requirement.",
-    "status": "Requires Evidence / Verification",
-    "completion": 20,
+    "implementation": "KnowBe4 cybersecurity awareness has been completed for all employees. Completion reports, campaign scope, approvals and effectiveness metrics must be linked and validated for this control.",
+    "status": "Partially Completed",
+    "completion": 60,
     "requiredEvidence": [
       "Evaluation/ survey report for all of the Cyber Security Awareness Programs conducted"
     ],
-    "existingEvidence": [],
+    "existingEvidence": [
+      "KnowBe4 awareness completed for all employees — confirmed by Head of Cybersecurity; platform completion report requires attachment"
+    ],
     "missingEvidence": [
-      "Evaluation/ survey report for all of the Cyber Security Awareness Programs conducted"
+      "KnowBe4 completion export covering all employees",
+      "Approved awareness programme and campaign plan",
+      "Effectiveness metrics and periodic evaluation",
+      "Exceptions and remediation records where applicable"
     ],
     "gap": "Control-specific gap requires evidence-based assessment.",
     "requiredAction": "Validate implementation, document the gap, assign ownership and collect the required evidence.",
@@ -1306,7 +1342,7 @@
     "capabilities": [
       "KnowBe4"
     ],
-    "evidenceStatus": "Missing",
+    "evidenceStatus": "Pending",
     "evidenceOwner": "Cybersecurity",
     "evidenceLocation": "Not linked",
     "dateCollected": "",
@@ -1322,19 +1358,22 @@
     "name": "Cyber Security Awareness",
     "requirement": "Customer awareness should address for both retail and commercial customers and, at a minimum, include a listing of suggested cyber security mechanisms which customers may consider implementing to mitigate their own risk(s).",
     "applicability": "Applicable — requires validation",
-    "implementation": "KnowBe4 is implemented. Campaign configuration, completion, effectiveness metrics and evidence must be validated against this requirement.",
-    "status": "Requires Evidence / Verification",
-    "completion": 20,
+    "implementation": "KnowBe4 cybersecurity awareness has been completed for all employees. Completion reports, campaign scope, approvals and effectiveness metrics must be linked and validated for this control.",
+    "status": "Partially Completed",
+    "completion": 60,
     "requiredEvidence": [
       "Approved Cybersecurity Awareness and Training Program document",
       "List of Cyber Security Awareness Programs (including the target audience, and the channel type) conducted by the Cyber Security Function",
       "Organization's suggested list of cyber security mechanism for third party/ customer compliance."
     ],
-    "existingEvidence": [],
+    "existingEvidence": [
+      "KnowBe4 awareness completed for all employees — confirmed by Head of Cybersecurity; platform completion report requires attachment"
+    ],
     "missingEvidence": [
-      "Approved Cybersecurity Awareness and Training Program document",
-      "List of Cyber Security Awareness Programs (including the target audience, and the channel type) conducted by the Cyber Security Function",
-      "Organization's suggested list of cyber security mechanism for third party/ customer compliance."
+      "KnowBe4 completion export covering all employees",
+      "Approved awareness programme and campaign plan",
+      "Effectiveness metrics and periodic evaluation",
+      "Exceptions and remediation records where applicable"
     ],
     "gap": "Control-specific gap requires evidence-based assessment.",
     "requiredAction": "Validate implementation, document the gap, assign ownership and collect the required evidence.",
@@ -1350,7 +1389,7 @@
     "capabilities": [
       "KnowBe4"
     ],
-    "evidenceStatus": "Missing",
+    "evidenceStatus": "Pending",
     "evidenceOwner": "Cybersecurity",
     "evidenceLocation": "Not linked",
     "dateCollected": "",
@@ -1657,9 +1696,9 @@
     "name": "Cyber Security Risk Management",
     "requirement": "The cyber security risk management process should be initiated:\n\na. At an early stage of the project.\nb. Prior to critical change.\nc. When outsourcing is being considered.\nd. When launching new products and technologies.",
     "applicability": "Applicable — requires validation",
-    "implementation": "Consequent to reviewing the evidences, it was noted that the scope of SecurEyes' assessment for this control was limited to requirements (b) and (d), relating to the initiation of Cyber Security risk assessments prior to critical changes and when launching new products and technologies.\n\n Furthermore, it was noted that the existing Cyber Security Risk Management Process was reviewed and enhanced by the SecurEyes consultant to align with Muhlah's operational requirements and the applicable Saudi Central Bank (SAMA) Cyber Security Framework requirements. At the time of the assessment, the updated Cyber Security Risk Management Process was pending formal review and approval by Muhlah's management. During the assessment walkthrough, it was noted that a Cyber Security risk assessment was performed for the planned FortiGate maintenance activity scheduled for 7 July, and the identified risks were documented within the centralized risk register. \n\nFurthermore, for the implementation of the Loan Management System (LMS), the Cyber Security Risk Assessment process had been initiated; however, the assessment remained in progress pending the required inputs and responses from the Business Owner.\n\n Additionally, it was noted that Key Performance Indicators (KPIs) have been established for the Cyber Security Risk Management process; however, periodic recording and monitoring of the defined KPIs is scheduled to commence by the end of Q3. It was further noted that the remaining requirements under this control, including items (a) and (c), were reviewed independently by Muhlah. Accordingly, the overall maturity level for this control will be determined by Muhlah based on the combined assessment results for all applicable control requirements..",
-    "status": "In Progress",
-    "completion": 40,
+    "implementation": "Consequent to reviewing the evidences, it was noted that the scope of SecurEyes' assessment for this control was limited to requirements (b) and (d), relating to the initiation of Cyber Security risk assessments prior to critical changes and when launching new products and technologies.\n\n Furthermore, it was noted that the existing Cyber Security Risk Management Process was reviewed and enhanced by the SecurEyes consultant to align with Muhlah's operational requirements and the applicable Saudi Central Bank (SAMA) Cyber Security Framework requirements. At the time of the assessment, the updated Cyber Security Risk Management Process was pending formal review and approval by Muhlah's management. During the assessment walkthrough, it was noted that a Cyber Security risk assessment was performed for the planned FortiGate maintenance activity scheduled for 7 July, and the identified risks were documented within the centralized risk register. \n\nFurthermore, for the implementation of the Loan Management System (LMS), the Cyber Security Risk Assessment process had been initiated; however, the assessment remained in progress pending the required inputs and responses from the Business Owner.\n\n Additionally, it was noted that Key Performance Indicators (KPIs) have been established for the Cyber Security Risk Management process; however, periodic recording and monitoring of the defined KPIs is scheduled to commence by the end of Q3. It was further noted that the remaining requirements under this control, including items (a) and (c), were reviewed independently by Muhlah. Accordingly, the overall maturity level for this control will be determined by Muhlah based on the combined assessment results for all applicable control requirements..\n\nInternal and external cybersecurity risk assessments are performed at project initiation and project closure. Records and owner approvals must be linked and validated.",
+    "status": "Partially Completed",
+    "completion": 60,
     "requiredEvidence": [
       "Project Management Methodology/ Framework/ Workflow (highlighting/ including Cyber Security controls/ guidelines).",
       "Risk Assessment Reports",
@@ -1667,11 +1706,14 @@
       "Evidence for Communication and approval of launching products"
     ],
     "existingEvidence": [
-      "Assessment narrative and referenced implementation activity in the source workbook — evidence link requires verification"
+      "Internal and external project risk assessments at initiation and closure — confirmed by Head of Cybersecurity; records require attachment"
     ],
     "missingEvidence": [
-      "Validate and link the requested evidence to this control",
-      "Confirm implementation and operating effectiveness"
+      "Complete project assessment register",
+      "Initiation and closure assessment reports",
+      "External assessor reports",
+      "Business/risk owner approvals",
+      "Evidence of risk treatment closure"
     ],
     "gap": "Although the Cyber Security Risk Management process has been initiated for critical changes and new technology implementations, the updated Cyber Security Risk Management Process is pending formal review and approval by Muhlah's management. Furthermore, the Cyber Security risk assessment for the Loan Management System remains in progress pending the required inputs from the Business Owner, and evidence demonstrating periodic monitoring and measurement of the effectiveness of the Cyber Security Risk Management process through the established Key Performance Indicators (KPIs) was not available at the time of the assessment.",
     "requiredAction": "Muhlah should obtain formal management approval of the updated Cyber Security Risk Management Process, complete the Cyber Security risk assessment for the Loan Management System by obtaining the required Business Owner inputs, and implement periodic monitoring and reporting of the established Key Performance Indicators (KPIs) to measure and demonstrate the effectiveness of the Cyber Security Risk Management process",

@@ -5,14 +5,14 @@ export const dataNotice = "Demo and planning data only. Unverified values are ex
 export const samaSummary = { total: 237, closed: null, inProgress: null, notStarted: null, blocked: null, notApplicable: null, completion: null, currentMaturity: null, targetMaturity: 3 };
 
 export const kpis: Kpi[] = [
-  { label: "SAMA CSF", primary: "28% assessed", secondary: "147 requirements • Target ML3", tone: "teal", section: "sama" },
+  { label: "SAMA CSF", primary: "30% assessed", secondary: "147 requirements • Target ML3", tone: "teal", section: "sama" },
   { label: "Cybersecurity Projects", primary: "7 tracked", secondary: "1 blocked; dependencies visible", tone: "blue", section: "roadmap" },
   { label: "Critical Risks", primary: "Unrated", secondary: "Assign ratings in risk register", tone: "red", section: "risks" },
   { label: "Security Solutions", primary: "8 operational", secondary: "ManageEngine starting • Qualys awaiting NOC", tone: "violet", section: "stack" },
   { label: "Vulnerabilities", primary: "Needs Verification", secondary: "Critical / High / Medium / Low", tone: "amber", section: "stack" },
   { label: "Incidents", primary: "Needs Verification", secondary: "Open / Closed / SLA breached", tone: "blue", section: "overview" },
   { label: "Third Parties", primary: "10 tracked", secondary: "Assessment status editable", tone: "violet", section: "third-parties" },
-  { label: "Awareness", primary: "Needs Verification", secondary: "KnowBe4 campaign metrics", tone: "teal", section: "people" },
+  { label: "Awareness", primary: "100%", secondary: "All employees completed • evidence to attach", tone: "teal", section: "people" },
   { label: "Infrastructure", primary: "Segmentation", secondary: "Improvement in progress", tone: "amber", section: "infrastructure" },
   { label: "Documents / Evidence", primary: "Growing repository", secondary: "Readiness needs verification", tone: "blue", section: "sama" },
   { label: "Hiring", primary: "1 DFIR planned", secondary: "Architecture capability via training", tone: "red", section: "people" },
