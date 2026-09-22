@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { ArrowUpRight, BadgeCheck, Building2, Check, ChevronDown, CircleAlert, FileCheck2, Menu, ShieldCheck, Users, X } from "lucide-react";
 import { Bar, BarChart, CartesianGrid, Cell, Pie, PieChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import samaControls from "@/data/sama-controls.json";
@@ -76,20 +76,25 @@ function Overview({ onChange }: { onChange: (tab: Tab) => void }) {
 }
 
 function SamaView() {
-  const domains = useMemo(() => {
+  const [,setMaturityVersion]=useState(0);
+  useEffect(()=>{const refresh=()=>setMaturityVersion(value=>value+1);window.addEventListener("sama-maturity-change",refresh);const timer=window.setTimeout(refresh,0);return()=>{window.removeEventListener("sama-maturity-change",refresh);window.clearTimeout(timer)}},[]);
+  const selectedMaturity=(control:SamaControlRecord):number|null=>{if(typeof window==="undefined")return control.sourceMaturity;try{const saved=JSON.parse(localStorage.getItem("muhlah-sama-maturity-v1")||"{}");const value=saved[control.id];return value==="NA"?null:Number(value??control.sourceMaturity)}catch{return control.sourceMaturity}};
+  const domains = (() => {
     const grouped = new Map<string, SamaControlRecord[]>();
     controls.forEach(control => grouped.set(control.domain, [...(grouped.get(control.domain) ?? []), control]));
-    return [...grouped].map(([name, rows]) => { const applicable = rows.filter(row => row.sourceMaturity !== null); const ml3 = rows.filter(row => row.sourceMaturity === 3).length; return { name: name.replace("Cyber Security", "Cybersecurity"), total: rows.length, closed: rows.filter(row => row.sourceStatus.toLowerCase().includes("closed")).length, progress: rows.filter(row => [2,3].includes(row.sourceMaturity ?? 0)).length, remaining: rows.filter(row => row.sourceMaturity === 1).length, notApplicable: rows.filter(row => row.sourceMaturity === null).length, ml3, score: applicable.length ? Math.round((ml3 / applicable.length) * 100) : 0 }; });
-  }, []);
+    return [...grouped].map(([name, rows]) => { const applicable = rows.filter(row => selectedMaturity(row)!==null); const ml3 = rows.filter(row => (selectedMaturity(row)??0)>=3).length; return { name: name.replace("Cyber Security", "Cybersecurity"), total: rows.length, closed: rows.filter(row => row.sourceStatus.toLowerCase().includes("closed")).length, progress: rows.filter(row => (selectedMaturity(row)??0)>=2).length, remaining: rows.filter(row => selectedMaturity(row)===1).length, notApplicable: rows.filter(row => selectedMaturity(row)===null).length, ml3, score: applicable.length ? Math.round((ml3 / applicable.length) * 100) : 0 }; });
+  })();
+  const maturityCount=(level:number|null)=>controls.filter(c=>selectedMaturity(c)===level).length;
+  const ml3plus=controls.filter(c=>(selectedMaturity(c)??0)>=3).length; const applicable=controls.filter(c=>selectedMaturity(c)!==null).length;
   const statusData = [
-    { name: "Recorded ML3", value: controls.filter(c => c.sourceMaturity === 3).length, color: "#21836f" },
-    { name: "Recorded ML2", value: controls.filter(c => c.sourceMaturity === 2).length, color: "#2777c7" },
-    { name: "Recorded ML1", value: controls.filter(c => c.sourceMaturity === 1).length, color: "#d69f43" },
-    { name: "Not applicable", value: controls.filter(c => c.sourceMaturity === null).length, color: "#8d99a6" },
+    { name: "ML3 or above", value: ml3plus, color: "#21836f" },
+    { name: "ML2", value: maturityCount(2), color: "#2777c7" },
+    { name: "ML1", value: maturityCount(1), color: "#d69f43" },
+    { name: "Not applicable", value: maturityCount(null), color: "#8d99a6" },
   ];
   return <main>
     <SectionHeading eyebrow="SAMA CSF & ML3" title="Maturity and compliance trajectory" copy="All 249 controls from the supplied SAMA self-assessment workbook. Recorded maturity is shown separately from validated closure."/>
-    <section className="sama-topline"><article><span>Assessment progress</span><strong>30%</strong><ProgressBar value={30}/><small>Management assessment progress; not a certification result</small></article><article><span>Target maturity</span><strong>ML3</strong><p>80 of 236 applicable controls are recorded at ML3 in the workbook (34%).</p></article><article><span>Workbook coverage</span><strong>249</strong><p>80 ML3 · 137 ML2 · 19 ML1 · 13 not applicable.</p></article></section>
+    <section className="sama-topline"><article><span>Assessment progress</span><strong>{Math.round(ml3plus/Math.max(applicable,1)*100)}%</strong><ProgressBar value={Math.round(ml3plus/Math.max(applicable,1)*100)}/><small>Controls selected at ML3 or above; not a certification result</small></article><article><span>Target maturity</span><strong>ML3</strong><p>{ml3plus} of {applicable} applicable controls are selected at ML3 or above.</p></article><article><span>Control coverage</span><strong>249</strong><p>{ml3plus} ML3+ · {maturityCount(2)} ML2 · {maturityCount(1)} ML1 · {maturityCount(null)} not applicable.</p></article></section>
     <section className="executive-grid sama-charts"><article className="card"><div className="card-title"><div><span>DOMAIN READINESS</span><h2>Assessment progress by domain</h2></div></div><div className="chart-container"><ResponsiveContainer width="100%" height="100%"><BarChart data={domains} layout="vertical" margin={{ left: 8, right: 22 }}><CartesianGrid stroke="#e8edf2" horizontal={false}/><XAxis type="number" domain={[0,100]} tickFormatter={value => `${value}%`} axisLine={false} tickLine={false} fontSize={11}/><YAxis type="category" dataKey="name" width={160} axisLine={false} tickLine={false} fontSize={11}/><Tooltip formatter={(value) => `${value}%`} cursor={{fill:"#f5f8fa"}}/><Bar dataKey="score" fill="#173b57" radius={[0,5,5,0]} barSize={20}/></BarChart></ResponsiveContainer></div></article><article className="card"><div className="card-title"><div><span>CONTROL POSITION</span><h2>Assessment distribution</h2></div></div><div className="donut-layout"><ResponsiveContainer width={210} height={210}><PieChart><Pie data={statusData} dataKey="value" innerRadius={66} outerRadius={90} paddingAngle={2}>{statusData.map(item => <Cell key={item.name} fill={item.color}/>)}</Pie></PieChart></ResponsiveContainer><div className="chart-legend">{statusData.map(item => <div key={item.name}><i style={{background:item.color}}/><span>{item.name}</span><b>{item.value}</b></div>)}</div></div></article></section>
     <section className="card domain-table"><div className="card-title"><div><span>DOMAIN DETAIL</span><h2>SAMA CSF domain position</h2></div></div><div className="table-scroll"><table><thead><tr><th>Domain</th><th>Total controls</th><th>Confirmed closed</th><th>ML2 / ML3</th><th>ML1 remaining</th><th>ML3 coverage</th></tr></thead><tbody>{domains.map(domain => <tr key={domain.name}><td><strong>{domain.name}</strong></td><td>{domain.total}</td><td>{domain.closed}</td><td>{domain.progress}</td><td>{domain.remaining}</td><td><div className="table-progress"><ProgressBar value={domain.score}/><b>{domain.score}%</b></div></td></tr>)}</tbody></table></div></section>
     <section className="ml3-gaps"><SectionHeading eyebrow="PRIORITY GAPS" title="What remains to reach ML3" copy="The largest governance and assurance themes requiring closure, approval, or validated operating evidence."/><div>{[["01","Architecture governance","Approve HLD/LLD, target-state architecture and recurring governance."],["02","Vulnerability management","Complete NOC dependency, formalise cadence and evidence remediation closure."],["03","Resilience assurance","Complete BIA, BCP, recovery objectives and tested DR evidence."],["04","Evidence completeness","Link approved artefacts and operating records to every applicable control."]].map(gap => <article key={gap[0]}><span>{gap[0]}</span><h3>{gap[1]}</h3><p>{gap[2]}</p></article>)}</div></section>
