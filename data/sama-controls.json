@@ -1338,7 +1338,7 @@
     "name": "Cyber Security in Project Management",
     "requirement": "Cyber security should be integrated into the Member Organization's project management methodology to ensure that cyber security risks are identified and addressed as part of a project.",
     "applicability": "Applicable",
-    "implementation": "Internal and external cybersecurity risk assessments are required and tracked at project initiation and project closure. Project records and approvals should remain linked as evidence.",
+    "implementation": "A cybersecurity risk assessment is issued before each project and requires approval. For third-party projects, both internal and external assessments are completed, including a questionnaire completed by the third party.",
     "status": "In Progress",
     "completion": 40,
     "requiredEvidence": [
@@ -1347,7 +1347,7 @@
       "Control-owner validation"
     ],
     "existingEvidence": [
-      "Internal and external project risk assessments at initiation and closure — confirmed by Head of Cybersecurity; records require attachment"
+      "Pre-project cybersecurity risk assessment, approval record, internal assessment and third-party completed external questionnaire — confirmed by Head of Cybersecurity; records require attachment"
     ],
     "missingEvidence": [],
     "gap": "Current maturity is below the ML3 target.",
@@ -1357,7 +1357,7 @@
     "targetDate": "Needs Verification",
     "dependencies": [
       "Project assessment register",
-      "Initiation and closure evidence",
+      "Initiation evidence",
       "Risk-owner approval"
     ],
     "notes": "Source: SAMA-CSF-SelfAssessment AUG 24.xlsx, row 38. Workbook status: blank. Workbook maturity: 2-Repeatable but informal.",
@@ -1380,7 +1380,7 @@
     "name": "Cyber Security in Project Management",
     "requirement": "The Member Organization’s project management methodology should ensure that:a. cyber security objectives are included in project objectives;b. the cyber security function is part of all phases of the project;c. a risk assessment is performed at the start of the project to determine the cyber security risks and to ensure that cyber security requirements are addressed either by the existing cyber security controls (based on cyber security standards) or to be developed;d. cyber security risks are registered in the project-risk register and tracked;e. responsibilities for cyber security are defined and allocated;f. a cyber security review is performed by an independent internal or external party.",
     "applicability": "Applicable",
-    "implementation": "Internal and external cybersecurity risk assessments are required and tracked at project initiation and project closure. Project records and approvals should remain linked as evidence.",
+    "implementation": "A cybersecurity risk assessment is issued before each project and requires approval. For third-party projects, both internal and external assessments are completed, including a questionnaire completed by the third party.",
     "status": "In Progress",
     "completion": 40,
     "requiredEvidence": [
@@ -1389,7 +1389,7 @@
       "Control-owner validation"
     ],
     "existingEvidence": [
-      "Internal and external project risk assessments at initiation and closure — confirmed by Head of Cybersecurity; records require attachment"
+      "Pre-project cybersecurity risk assessment, approval record, internal assessment and third-party completed external questionnaire — confirmed by Head of Cybersecurity; records require attachment"
     ],
     "missingEvidence": [],
     "gap": "Current maturity is below the ML3 target.",
@@ -1399,7 +1399,7 @@
     "targetDate": "Needs Verification",
     "dependencies": [
       "Project assessment register",
-      "Initiation and closure evidence",
+      "Initiation evidence",
       "Risk-owner approval"
     ],
     "notes": "Source: SAMA-CSF-SelfAssessment AUG 24.xlsx, row 39. Workbook status: blank. Workbook maturity: 2-Repeatable but informal.",
@@ -3956,7 +3956,7 @@
     "name": "Cyber Security Architecture",
     "requirement": "The cyber security architecture should be defined, approved and implemented.",
     "applicability": "Applicable",
-    "implementation": "Muhlah - Cybersecurity Architecture v1.1.docx Muhlah_Compartment_zones.pdf",
+    "implementation": "Muhlah - Cybersecurity Architecture v1.1.docx Muhlah_Compartment_zones.pdf The Head of Cybersecurity plans to complete architecture certification and apply the capability within Muhlah; certification is not yet recorded as completed.",
     "status": "Not Started",
     "completion": 0,
     "requiredEvidence": [
@@ -3974,9 +3974,9 @@
     "priority": "High",
     "targetDate": "Needs Verification",
     "dependencies": [
-      "Management approval",
+      "Architecture certification and development plan",
       "IT HLD/LLD inputs",
-      "Architecture capability development"
+      "Target-state governance"
     ],
     "notes": "Source: SAMA-CSF-SelfAssessment AUG 24.xlsx, row 106. Workbook status: blank. Workbook maturity: 1-Ad hoc.",
     "sourceMaturity": 1,
@@ -4001,7 +4001,7 @@
     "name": "Cyber Security Architecture",
     "requirement": "The compliance with the cyber security architecture should be monitored.",
     "applicability": "Applicable",
-    "implementation": "Muhlah - Cybersecurity Architecture v1.1.docx",
+    "implementation": "Muhlah - Cybersecurity Architecture v1.1.docx The Head of Cybersecurity plans to complete architecture certification and apply the capability within Muhlah; certification is not yet recorded as completed.",
     "status": "Not Started",
     "completion": 0,
     "requiredEvidence": [
@@ -4019,9 +4019,9 @@
     "priority": "High",
     "targetDate": "2026-11-01T00:00:00",
     "dependencies": [
-      "Management approval",
+      "Architecture certification and development plan",
       "IT HLD/LLD inputs",
-      "Architecture capability development"
+      "Target-state governance"
     ],
     "notes": "Source: SAMA-CSF-SelfAssessment AUG 24.xlsx, row 107. Workbook status: blank. Workbook maturity: 1-Ad hoc.",
     "sourceMaturity": 1,
@@ -4046,7 +4046,7 @@
     "name": "Cyber Security Architecture",
     "requirement": "The cyber security architecture should include: a. A strategic outline of cyber security capabilities and controls based on the business requirements;",
     "applicability": "Applicable",
-    "implementation": "27_Muhlah - Information Security Strategy V1.0.pdf Muhlah - Cybersecurity Architecture v1.0.docx",
+    "implementation": "27_Muhlah - Information Security Strategy V1.0.pdf Muhlah - Cybersecurity Architecture v1.0.docx The Head of Cybersecurity plans to complete architecture certification and apply the capability within Muhlah; certification is not yet recorded as completed.",
     "status": "Not Started",
     "completion": 0,
     "requiredEvidence": [
@@ -4064,9 +4064,9 @@
     "priority": "High",
     "targetDate": "2026-11-01T00:00:00",
     "dependencies": [
-      "Management approval",
+      "Architecture certification and development plan",
       "IT HLD/LLD inputs",
-      "Architecture capability development"
+      "Target-state governance"
     ],
     "notes": "Source: SAMA-CSF-SelfAssessment AUG 24.xlsx, row 108. Workbook status: blank. Workbook maturity: 1-Ad hoc.",
     "sourceMaturity": 1,
@@ -4091,7 +4091,7 @@
     "name": "Cyber Security Architecture",
     "requirement": "b. approval of the defined cyber security architecture;",
     "applicability": "Applicable",
-    "implementation": "Muhlah - Cybersecurity Architecture v1.0.docx",
+    "implementation": "Muhlah - Cybersecurity Architecture v1.0.docx The Head of Cybersecurity plans to complete architecture certification and apply the capability within Muhlah; certification is not yet recorded as completed.",
     "status": "Not Started",
     "completion": 0,
     "requiredEvidence": [
@@ -4109,9 +4109,9 @@
     "priority": "High",
     "targetDate": "2026-11-08T00:00:00",
     "dependencies": [
-      "Management approval",
+      "Architecture certification and development plan",
       "IT HLD/LLD inputs",
-      "Architecture capability development"
+      "Target-state governance"
     ],
     "notes": "Source: SAMA-CSF-SelfAssessment AUG 24.xlsx, row 109. Workbook status: blank. Workbook maturity: 1-Ad hoc.",
     "sourceMaturity": 1,
@@ -4136,7 +4136,7 @@
     "name": "Cyber Security Architecture",
     "requirement": "c. the requirement of having qualified cyber security architects;",
     "applicability": "Applicable",
-    "implementation": "Muhlah - Cybersecurity Architecture v1.0.docx",
+    "implementation": "Muhlah - Cybersecurity Architecture v1.0.docx The Head of Cybersecurity plans to complete architecture certification and apply the capability within Muhlah; certification is not yet recorded as completed.",
     "status": "Not Started",
     "completion": 0,
     "requiredEvidence": [
@@ -4154,9 +4154,9 @@
     "priority": "High",
     "targetDate": "2026-11-15T00:00:00",
     "dependencies": [
-      "Management approval",
+      "Architecture certification and development plan",
       "IT HLD/LLD inputs",
-      "Architecture capability development"
+      "Target-state governance"
     ],
     "notes": "Source: SAMA-CSF-SelfAssessment AUG 24.xlsx, row 110. Workbook status: blank. Workbook maturity: 1-Ad hoc.",
     "sourceMaturity": 1,
@@ -4181,7 +4181,7 @@
     "name": "Cyber Security Architecture",
     "requirement": "d. design principles for developing cyber security controls and applying cyber security requirements (i.e., the security-by-design principle);",
     "applicability": "Applicable",
-    "implementation": "Muhlah - Cybersecurity Architecture v1.0.docx Application Logging - High level Architecture.pdf",
+    "implementation": "Muhlah - Cybersecurity Architecture v1.0.docx Application Logging - High level Architecture.pdf The Head of Cybersecurity plans to complete architecture certification and apply the capability within Muhlah; certification is not yet recorded as completed.",
     "status": "Not Started",
     "completion": 0,
     "requiredEvidence": [
@@ -4199,9 +4199,9 @@
     "priority": "High",
     "targetDate": "2026-11-22T00:00:00",
     "dependencies": [
-      "Management approval",
+      "Architecture certification and development plan",
       "IT HLD/LLD inputs",
-      "Architecture capability development"
+      "Target-state governance"
     ],
     "notes": "Source: SAMA-CSF-SelfAssessment AUG 24.xlsx, row 111. Workbook status: blank. Workbook maturity: 1-Ad hoc.",
     "sourceMaturity": 1,
@@ -4226,7 +4226,7 @@
     "name": "Cyber Security Architecture",
     "requirement": "e. periodic review of the cyber security architecture.",
     "applicability": "Applicable",
-    "implementation": "Muhlah - Cybersecurity Architecture v1.0.docx",
+    "implementation": "Muhlah - Cybersecurity Architecture v1.0.docx The Head of Cybersecurity plans to complete architecture certification and apply the capability within Muhlah; certification is not yet recorded as completed.",
     "status": "Not Started",
     "completion": 0,
     "requiredEvidence": [
@@ -4244,9 +4244,9 @@
     "priority": "High",
     "targetDate": "2026-10-29T00:00:00",
     "dependencies": [
-      "Management approval",
+      "Architecture certification and development plan",
       "IT HLD/LLD inputs",
-      "Architecture capability development"
+      "Target-state governance"
     ],
     "notes": "Source: SAMA-CSF-SelfAssessment AUG 24.xlsx, row 112. Workbook status: blank. Workbook maturity: 1-Ad hoc.",
     "sourceMaturity": 1,
@@ -4663,7 +4663,8 @@
     "sourceStatus": "Blank",
     "capabilities": [
       "Netskope",
-      "Secure SDLC / SAST"
+      "Secure SDLC / SAST",
+      "Application whitelisting"
     ],
     "evidenceStatus": "Referenced — validate",
     "evidenceOwner": "Cybersecurity / Control Owner",
@@ -4704,7 +4705,8 @@
     "sourceStatus": "Blank",
     "capabilities": [
       "Netskope",
-      "Secure SDLC / SAST"
+      "Secure SDLC / SAST",
+      "Application whitelisting"
     ],
     "evidenceStatus": "Referenced — validate",
     "evidenceOwner": "Cybersecurity / Control Owner",
@@ -4745,7 +4747,8 @@
     "sourceStatus": "Blank",
     "capabilities": [
       "Netskope",
-      "Secure SDLC / SAST"
+      "Secure SDLC / SAST",
+      "Application whitelisting"
     ],
     "evidenceStatus": "Referenced — validate",
     "evidenceOwner": "Cybersecurity / Control Owner",
@@ -4786,7 +4789,8 @@
     "sourceStatus": "Blank",
     "capabilities": [
       "Netskope",
-      "Secure SDLC / SAST"
+      "Secure SDLC / SAST",
+      "Application whitelisting"
     ],
     "evidenceStatus": "Referenced — validate",
     "evidenceOwner": "Cybersecurity / Control Owner",
@@ -4827,7 +4831,8 @@
     "sourceStatus": "Blank",
     "capabilities": [
       "Netskope",
-      "Secure SDLC / SAST"
+      "Secure SDLC / SAST",
+      "Application whitelisting"
     ],
     "evidenceStatus": "Referenced — validate",
     "evidenceOwner": "Cybersecurity / Control Owner",
@@ -4868,7 +4873,8 @@
     "sourceStatus": "Blank",
     "capabilities": [
       "Netskope",
-      "Secure SDLC / SAST"
+      "Secure SDLC / SAST",
+      "Application whitelisting"
     ],
     "evidenceStatus": "Referenced — validate",
     "evidenceOwner": "Cybersecurity / Control Owner",
@@ -4909,7 +4915,8 @@
     "sourceStatus": "Blank",
     "capabilities": [
       "Netskope",
-      "Secure SDLC / SAST"
+      "Secure SDLC / SAST",
+      "Application whitelisting"
     ],
     "evidenceStatus": "Referenced — validate",
     "evidenceOwner": "Cybersecurity / Control Owner",
@@ -4950,7 +4957,8 @@
     "sourceStatus": "Blank",
     "capabilities": [
       "Netskope",
-      "Secure SDLC / SAST"
+      "Secure SDLC / SAST",
+      "Application whitelisting"
     ],
     "evidenceStatus": "Referenced — validate",
     "evidenceOwner": "Cybersecurity / Control Owner",
@@ -4991,7 +4999,8 @@
     "sourceStatus": "Blank",
     "capabilities": [
       "Netskope",
-      "Secure SDLC / SAST"
+      "Secure SDLC / SAST",
+      "Application whitelisting"
     ],
     "evidenceStatus": "Referenced — validate",
     "evidenceOwner": "Cybersecurity / Control Owner",
@@ -5032,7 +5041,8 @@
     "sourceStatus": "Blank",
     "capabilities": [
       "Netskope",
-      "Secure SDLC / SAST"
+      "Secure SDLC / SAST",
+      "Application whitelisting"
     ],
     "evidenceStatus": "Referenced — validate",
     "evidenceOwner": "Cybersecurity / Control Owner",
@@ -5073,7 +5083,8 @@
     "sourceStatus": "Blank",
     "capabilities": [
       "Netskope",
-      "Secure SDLC / SAST"
+      "Secure SDLC / SAST",
+      "Application whitelisting"
     ],
     "evidenceStatus": "Referenced — validate",
     "evidenceOwner": "Cybersecurity / Control Owner",
@@ -5547,7 +5558,7 @@
     "name": "Infrastructure Security",
     "requirement": "The infrastructure security standards should be defined, approved and implemented.",
     "applicability": "Applicable",
-    "implementation": "Infrastructure Security Standard - draft",
+    "implementation": "Infrastructure Security Standard - draft Netskope is implemented across all Muhlah devices and applicable third-party devices. Application whitelisting is operational.",
     "status": "In Progress",
     "completion": 40,
     "requiredEvidence": [
@@ -5574,7 +5585,8 @@
     "sourceStatus": "Blank",
     "capabilities": [
       "Netskope",
-      "Fortinet / FortiGate"
+      "Fortinet / FortiGate",
+      "Application whitelisting"
     ],
     "evidenceStatus": "Referenced — validate",
     "evidenceOwner": "Cybersecurity / Control Owner",
@@ -5592,7 +5604,7 @@
     "name": "Infrastructure Security",
     "requirement": "The compliance with the infrastructure security standards should be monitored.",
     "applicability": "Applicable",
-    "implementation": "No implementation narrative is recorded in the workbook; control evidence requires validation.",
+    "implementation": "No implementation narrative is recorded in the workbook; control evidence requires validation. Netskope is implemented across all Muhlah devices and applicable third-party devices. Application whitelisting is operational.",
     "status": "In Progress",
     "completion": 40,
     "requiredEvidence": [
@@ -5619,7 +5631,8 @@
     "sourceStatus": "Blank",
     "capabilities": [
       "Netskope",
-      "Fortinet / FortiGate"
+      "Fortinet / FortiGate",
+      "Application whitelisting"
     ],
     "evidenceStatus": "Missing",
     "evidenceOwner": "Cybersecurity / Control Owner",
@@ -5637,7 +5650,7 @@
     "name": "Infrastructure Security",
     "requirement": "The effectiveness of the infrastructure cyber security controls should be measured and periodically evaluated.",
     "applicability": "Applicable",
-    "implementation": "Ref:Muhalah CS Centralized KPI Register v1.5.xlsx",
+    "implementation": "Ref:Muhalah CS Centralized KPI Register v1.5.xlsx Netskope is implemented across all Muhlah devices and applicable third-party devices. Application whitelisting is operational.",
     "status": "In Progress",
     "completion": 40,
     "requiredEvidence": [
@@ -5664,7 +5677,8 @@
     "sourceStatus": "Blank",
     "capabilities": [
       "Netskope",
-      "Fortinet / FortiGate"
+      "Fortinet / FortiGate",
+      "Application whitelisting"
     ],
     "evidenceStatus": "Referenced — validate",
     "evidenceOwner": "Cybersecurity / Control Owner",
@@ -5682,7 +5696,7 @@
     "name": "Infrastructure Security",
     "requirement": "The infrastructure security standards should cover all instances of infrastructure available in the main datacenter(s), the disaster recovery data site(s) and office spaces.",
     "applicability": "Applicable",
-    "implementation": "Infrastructure Security Standard - draft",
+    "implementation": "Infrastructure Security Standard - draft Netskope is implemented across all Muhlah devices and applicable third-party devices. Application whitelisting is operational.",
     "status": "In Progress",
     "completion": 40,
     "requiredEvidence": [
@@ -5709,7 +5723,8 @@
     "sourceStatus": "Blank",
     "capabilities": [
       "Netskope",
-      "Fortinet / FortiGate"
+      "Fortinet / FortiGate",
+      "Application whitelisting"
     ],
     "evidenceStatus": "Referenced — validate",
     "evidenceOwner": "Cybersecurity / Control Owner",
@@ -5727,7 +5742,7 @@
     "name": "Infrastructure Security",
     "requirement": "The infrastructure security standards should cover all instances of infrastructure (e.g., operating systems, servers, virtual machines, firewalls, network devices, IDS, IPS, wireless network, gateway servers, proxy servers, email gateways, external connections, databases, file-shares, workstations, laptops, tablets, mobile devices, PBX).",
     "applicability": "Applicable",
-    "implementation": "Endpoint & IT Assets Security Policy — approved. Muhlah_Cybersecurity_Asset_Register 2 (1).xlsx",
+    "implementation": "Endpoint & IT Assets Security Policy — approved. Muhlah_Cybersecurity_Asset_Register 2 (1).xlsx Netskope is implemented across all Muhlah devices and applicable third-party devices. Application whitelisting is operational.",
     "status": "In Progress",
     "completion": 40,
     "requiredEvidence": [
@@ -5754,7 +5769,8 @@
     "sourceStatus": "Blank",
     "capabilities": [
       "Netskope",
-      "Fortinet / FortiGate"
+      "Fortinet / FortiGate",
+      "Application whitelisting"
     ],
     "evidenceStatus": "Referenced — validate",
     "evidenceOwner": "Cybersecurity / Control Owner",
@@ -5772,7 +5788,7 @@
     "name": "Infrastructure Security",
     "requirement": "The infrastructure security standard should include: a. the cyber security controls implemented (e.g., configuration parameters, events to monitor and retain [including system access and data], data-leakage prevention [DLP], identity and access management, remote maintenance);",
     "applicability": "Applicable",
-    "implementation": "Endpoint & IT Assets Security Policy. FortiGate dashboard and security-services screenshot. OCI IAM policies screenshot. OCI users and groups screenshot. Windows Security account-protection screenshots. Muhlah Cybersecurity Asset Register.",
+    "implementation": "Endpoint & IT Assets Security Policy. FortiGate dashboard and security-services screenshot. OCI IAM policies screenshot. OCI users and groups screenshot. Windows Security account-protection screenshots. Muhlah Cybersecurity Asset Register. Netskope is implemented across all Muhlah devices and applicable third-party devices. Application whitelisting is operational.",
     "status": "Not Started",
     "completion": 0,
     "requiredEvidence": [
@@ -5799,7 +5815,8 @@
     "sourceStatus": "Blank",
     "capabilities": [
       "Netskope",
-      "Fortinet / FortiGate"
+      "Fortinet / FortiGate",
+      "Application whitelisting"
     ],
     "evidenceStatus": "Referenced — validate",
     "evidenceOwner": "Cybersecurity / Control Owner",
@@ -5817,7 +5834,7 @@
     "name": "Infrastructure Security",
     "requirement": "b. the segregation of duties within the infrastructure component (supported with a documented authorization matrix);",
     "applicability": "Applicable",
-    "implementation": "Endpoint & IT Assets Security Policy.pdf",
+    "implementation": "Endpoint & IT Assets Security Policy.pdf Netskope is implemented across all Muhlah devices and applicable third-party devices. Application whitelisting is operational.",
     "status": "Not Started",
     "completion": 0,
     "requiredEvidence": [
@@ -5844,7 +5861,8 @@
     "sourceStatus": "Blank",
     "capabilities": [
       "Netskope",
-      "Fortinet / FortiGate"
+      "Fortinet / FortiGate",
+      "Application whitelisting"
     ],
     "evidenceStatus": "Referenced — validate",
     "evidenceOwner": "Cybersecurity / Control Owner",
@@ -5862,7 +5880,7 @@
     "name": "Infrastructure Security",
     "requirement": "c. the protection of data aligned with the (agreed) classification scheme (including privacy of customer data and, avoiding unauthorized access and (un)intended data leakage);",
     "applicability": "Applicable",
-    "implementation": "Data Privacy and Protection Policy.pdf",
+    "implementation": "Data Privacy and Protection Policy.pdf Netskope is implemented across all Muhlah devices and applicable third-party devices. Application whitelisting is operational.",
     "status": "Not Started",
     "completion": 0,
     "requiredEvidence": [
@@ -5889,7 +5907,8 @@
     "sourceStatus": "Blank",
     "capabilities": [
       "Netskope",
-      "Fortinet / FortiGate"
+      "Fortinet / FortiGate",
+      "Application whitelisting"
     ],
     "evidenceStatus": "Referenced — validate",
     "evidenceOwner": "Cybersecurity / Control Owner",
@@ -5907,7 +5926,7 @@
     "name": "Infrastructure Security",
     "requirement": "d. the use of approved software and secure protocols;",
     "applicability": "Applicable",
-    "implementation": "No implementation narrative is recorded in the workbook; control evidence requires validation.",
+    "implementation": "No implementation narrative is recorded in the workbook; control evidence requires validation. Netskope is implemented across all Muhlah devices and applicable third-party devices. Application whitelisting is operational.",
     "status": "Not Started",
     "completion": 0,
     "requiredEvidence": [
@@ -5934,7 +5953,8 @@
     "sourceStatus": "Blank",
     "capabilities": [
       "Netskope",
-      "Fortinet / FortiGate"
+      "Fortinet / FortiGate",
+      "Application whitelisting"
     ],
     "evidenceStatus": "Missing",
     "evidenceOwner": "Cybersecurity / Control Owner",
@@ -5952,7 +5972,7 @@
     "name": "Infrastructure Security",
     "requirement": "e. segmentation of networks;",
     "applicability": "Applicable",
-    "implementation": "FortiGate dashboard.png OCI VCN security-list configuration.png Muhlah Compartment Zones and Production Topology.",
+    "implementation": "FortiGate dashboard.png OCI VCN security-list configuration.png Muhlah Compartment Zones and Production Topology. Netskope is implemented across all Muhlah devices and applicable third-party devices. Application whitelisting is operational.",
     "status": "In Progress",
     "completion": 40,
     "requiredEvidence": [
@@ -5979,7 +5999,8 @@
     "sourceStatus": "Blank",
     "capabilities": [
       "Netskope",
-      "Fortinet / FortiGate"
+      "Fortinet / FortiGate",
+      "Application whitelisting"
     ],
     "evidenceStatus": "Referenced — validate",
     "evidenceOwner": "Cybersecurity / Control Owner",
@@ -5997,7 +6018,7 @@
     "name": "Infrastructure Security",
     "requirement": "f. malicious code/software and virus protection (and applying application whitelisting and APT protection);",
     "applicability": "Applicable",
-    "implementation": "Endpoint & IT Assets Security Policy.pdf",
+    "implementation": "Endpoint & IT Assets Security Policy.pdf Netskope is implemented across all Muhlah devices and applicable third-party devices. Application whitelisting is operational.",
     "status": "In Progress",
     "completion": 40,
     "requiredEvidence": [
@@ -6024,7 +6045,8 @@
     "sourceStatus": "Blank",
     "capabilities": [
       "Netskope",
-      "Fortinet / FortiGate"
+      "Fortinet / FortiGate",
+      "Application whitelisting"
     ],
     "evidenceStatus": "Referenced — validate",
     "evidenceOwner": "Cybersecurity / Control Owner",
@@ -6042,7 +6064,7 @@
     "name": "Infrastructure Security",
     "requirement": "g. vulnerability and patch management;",
     "applicability": "Applicable",
-    "implementation": "Patch Management Policy.pdf Vulnerability Management and Penetration Testing Policy.pdf WSUS Patch Management Implementation Evidence.pdf Workstations Vulnerability Assessment Retest Report.pdf External Infrastructure Vulnerability Assessment Report.pdf External Network Penetration Testing Retest Report.pdf Mobile and Web Application Penetration Testing Retest Reports.",
+    "implementation": "Patch Management Policy.pdf Vulnerability Management and Penetration Testing Policy.pdf WSUS Patch Management Implementation Evidence.pdf Workstations Vulnerability Assessment Retest Report.pdf External Infrastructure Vulnerability Assessment Report.pdf External Network Penetration Testing Retest Report.pdf Mobile and Web Application Penetration Testing Retest Reports. Netskope is implemented across all Muhlah devices and applicable third-party devices. Application whitelisting is operational.",
     "status": "In Progress",
     "completion": 40,
     "requiredEvidence": [
@@ -6069,7 +6091,8 @@
     "sourceStatus": "Blank",
     "capabilities": [
       "Netskope",
-      "Fortinet / FortiGate"
+      "Fortinet / FortiGate",
+      "Application whitelisting"
     ],
     "evidenceStatus": "Referenced — validate",
     "evidenceOwner": "Cybersecurity / Control Owner",
@@ -6087,7 +6110,7 @@
     "name": "Infrastructure Security",
     "requirement": "h. DDOS protection (where applicable); this should include: 1. the use of scrubbing services; 2. specification of the bandwidth agreed; 3. 24x7 monitoring by Security Operating Center (SOC), Service Provider (SP) and scrubbing provider; 4. testing of DDOS scrubbing (minimum twice a year); 5. DDOS services should be implemented for the main datacenter(s) as well as the disaster recovery site(s);",
     "applicability": "Applicable",
-    "implementation": "Ref: Oracle Contract agreement",
+    "implementation": "Ref: Oracle Contract agreement Netskope is implemented across all Muhlah devices and applicable third-party devices. Application whitelisting is operational.",
     "status": "Not Started",
     "completion": 0,
     "requiredEvidence": [
@@ -6114,7 +6137,8 @@
     "sourceStatus": "Blank",
     "capabilities": [
       "Netskope",
-      "Fortinet / FortiGate"
+      "Fortinet / FortiGate",
+      "Application whitelisting"
     ],
     "evidenceStatus": "Referenced — validate",
     "evidenceOwner": "Cybersecurity / Control Owner",
@@ -6132,7 +6156,7 @@
     "name": "Infrastructure Security",
     "requirement": "i. back-up and recovery procedures;",
     "applicability": "Applicable",
-    "implementation": "No implementation narrative is recorded in the workbook; control evidence requires validation.",
+    "implementation": "No implementation narrative is recorded in the workbook; control evidence requires validation. Netskope is implemented across all Muhlah devices and applicable third-party devices. Application whitelisting is operational.",
     "status": "Not Started",
     "completion": 0,
     "requiredEvidence": [
@@ -6159,7 +6183,8 @@
     "sourceStatus": "Blank",
     "capabilities": [
       "Netskope",
-      "Fortinet / FortiGate"
+      "Fortinet / FortiGate",
+      "Application whitelisting"
     ],
     "evidenceStatus": "Missing",
     "evidenceOwner": "Cybersecurity / Control Owner",
@@ -6177,7 +6202,7 @@
     "name": "Infrastructure Security",
     "requirement": "j. periodic cyber security compliance review.",
     "applicability": "Applicable",
-    "implementation": "No implementation narrative is recorded in the workbook; control evidence requires validation.",
+    "implementation": "No implementation narrative is recorded in the workbook; control evidence requires validation. Netskope is implemented across all Muhlah devices and applicable third-party devices. Application whitelisting is operational.",
     "status": "In Progress",
     "completion": 40,
     "requiredEvidence": [
@@ -6204,7 +6229,8 @@
     "sourceStatus": "Blank",
     "capabilities": [
       "Netskope",
-      "Fortinet / FortiGate"
+      "Fortinet / FortiGate",
+      "Application whitelisting"
     ],
     "evidenceStatus": "Missing",
     "evidenceOwner": "Cybersecurity / Control Owner",
@@ -6702,7 +6728,7 @@
     "name": "Secure Disposal of Information Assets",
     "requirement": "The secure disposal standard and procedure should be defined, approved and implemented.",
     "applicability": "Applicable",
-    "implementation": "Asset Management Policy.pdf , Muhlah - Asset Management Process",
+    "implementation": "Asset Management Policy.pdf , Muhlah - Asset Management Process BitRaser and DIPU secure-disposal capabilities are in place; disposal and destruction records should remain linked.",
     "status": "In Progress",
     "completion": 40,
     "requiredEvidence": [
@@ -6724,7 +6750,8 @@
     "sourceMaturity": 2,
     "sourceStatus": "Blank",
     "capabilities": [
-      "BitRaser"
+      "BitRaser",
+      "DIPU secure disposal"
     ],
     "evidenceStatus": "Referenced — validate",
     "evidenceOwner": "IT / Cybersecurity",
@@ -6742,7 +6769,7 @@
     "name": "Secure Disposal of Information Assets",
     "requirement": "The compliance with the secure disposal standard and procedure should be monitored.",
     "applicability": "Applicable",
-    "implementation": "Asset Management Policy.pdf , Muhlah - Asset Management Process",
+    "implementation": "Asset Management Policy.pdf , Muhlah - Asset Management Process BitRaser and DIPU secure-disposal capabilities are in place; disposal and destruction records should remain linked.",
     "status": "In Progress",
     "completion": 40,
     "requiredEvidence": [
@@ -6764,7 +6791,8 @@
     "sourceMaturity": 2,
     "sourceStatus": "Blank",
     "capabilities": [
-      "BitRaser"
+      "BitRaser",
+      "DIPU secure disposal"
     ],
     "evidenceStatus": "Referenced — validate",
     "evidenceOwner": "IT / Cybersecurity",
@@ -6782,7 +6810,7 @@
     "name": "Secure Disposal of Information Assets",
     "requirement": "The effectiveness of the secure disposal cyber security controls should be measured and periodically evaluated.",
     "applicability": "Applicable",
-    "implementation": "Ref:Muhalah CS Centralized KPI Register v1.5.xlsx",
+    "implementation": "Ref:Muhalah CS Centralized KPI Register v1.5.xlsx BitRaser and DIPU secure-disposal capabilities are in place; disposal and destruction records should remain linked.",
     "status": "In Progress",
     "completion": 40,
     "requiredEvidence": [
@@ -6804,7 +6832,8 @@
     "sourceMaturity": 2,
     "sourceStatus": "Blank",
     "capabilities": [
-      "BitRaser"
+      "BitRaser",
+      "DIPU secure disposal"
     ],
     "evidenceStatus": "Referenced — validate",
     "evidenceOwner": "IT / Cybersecurity",
@@ -6822,7 +6851,7 @@
     "name": "Secure Disposal of Information Assets",
     "requirement": "Information assets should be disposed in accordance with legal and regulatory requirements, when no longer required (i.e. meeting data privacy regulations to avoid unauthorized access and avoid (un)intended data leakage).",
     "applicability": "Applicable",
-    "implementation": "Asset Management Policy.pdf Email confirmation dated 30 April 2026 stating that no disposal activity occurred during the period.png",
+    "implementation": "Asset Management Policy.pdf Email confirmation dated 30 April 2026 stating that no disposal activity occurred during the period.png BitRaser and DIPU secure-disposal capabilities are in place; disposal and destruction records should remain linked.",
     "status": "In Progress",
     "completion": 40,
     "requiredEvidence": [
@@ -6844,7 +6873,8 @@
     "sourceMaturity": 2,
     "sourceStatus": "Blank",
     "capabilities": [
-      "BitRaser"
+      "BitRaser",
+      "DIPU secure disposal"
     ],
     "evidenceStatus": "Referenced — validate",
     "evidenceOwner": "IT / Cybersecurity",
@@ -6862,7 +6892,7 @@
     "name": "Secure Disposal of Information Assets",
     "requirement": "Sensitive information should be destroyed using techniques to make the information non-retrievable (e.g., secure erase, secure wiping, incineration, double crosscut, shredding).",
     "applicability": "Applicable",
-    "implementation": "No implementation narrative is recorded in the workbook; control evidence requires validation.",
+    "implementation": "No implementation narrative is recorded in the workbook; control evidence requires validation. BitRaser and DIPU secure-disposal capabilities are in place; disposal and destruction records should remain linked.",
     "status": "In Progress",
     "completion": 40,
     "requiredEvidence": [
@@ -6884,7 +6914,8 @@
     "sourceMaturity": 2,
     "sourceStatus": "Blank",
     "capabilities": [
-      "BitRaser"
+      "BitRaser",
+      "DIPU secure disposal"
     ],
     "evidenceStatus": "Missing",
     "evidenceOwner": "IT / Cybersecurity",
@@ -6902,7 +6933,7 @@
     "name": "Secure Disposal of Information Assets",
     "requirement": "The Member Organization should ensure that third party service providers used for secure disposal, transport and storage comply with the secure disposal standard and procedure and the effectiveness is periodically measured and evaluated.",
     "applicability": "Applicable",
-    "implementation": "No implementation narrative is recorded in the workbook; control evidence requires validation.",
+    "implementation": "No implementation narrative is recorded in the workbook; control evidence requires validation. BitRaser and DIPU secure-disposal capabilities are in place; disposal and destruction records should remain linked.",
     "status": "In Progress",
     "completion": 40,
     "requiredEvidence": [
@@ -6924,7 +6955,8 @@
     "sourceMaturity": 2,
     "sourceStatus": "Blank",
     "capabilities": [
-      "BitRaser"
+      "BitRaser",
+      "DIPU secure disposal"
     ],
     "evidenceStatus": "Missing",
     "evidenceOwner": "IT / Cybersecurity",
@@ -7284,7 +7316,7 @@
     "name": "Cyber Security Event Management",
     "requirement": "The security event management process should be defined, approved and implemented.",
     "applicability": "Applicable",
-    "implementation": "Information Security Event Monitoring Policy.pdf Muhlah - Cybersecurity Event Monitoring Process.docx Muhlah - Cybersecurity Event Monitoring Standard.docx",
+    "implementation": "Information Security Event Monitoring Policy.pdf Muhlah - Cybersecurity Event Monitoring Process.docx Muhlah - Cybersecurity Event Monitoring Standard.docx Operational SOC monitoring and threat-hunting capability are confirmed; current service and activity evidence should remain linked.",
     "status": "Partially Completed",
     "completion": 60,
     "requiredEvidence": [
@@ -7306,7 +7338,9 @@
     "sourceMaturity": 3,
     "sourceStatus": "Blank",
     "capabilities": [
-      "Cognna"
+      "Cognna",
+      "SOC monitoring",
+      "Threat hunting"
     ],
     "evidenceStatus": "Referenced — validate",
     "evidenceOwner": "Cybersecurity / Control Owner",
@@ -7324,7 +7358,7 @@
     "name": "Cyber Security Event Management",
     "requirement": "The effectiveness of the cyber security controls within the security event management process should be measured and periodically evaluated.",
     "applicability": "Applicable",
-    "implementation": "Information Security Event Monitoring Policy.pdf Incident Management Policy.pdf KPI/KRI review and approval email dated 24 June 2026. SAMA_CSF_KPI_KRI_Register Jun 2026(3).xlsx Cognna severity-based MTTD and MTTR SLA matrix.pdf",
+    "implementation": "Information Security Event Monitoring Policy.pdf Incident Management Policy.pdf KPI/KRI review and approval email dated 24 June 2026. SAMA_CSF_KPI_KRI_Register Jun 2026(3).xlsx Cognna severity-based MTTD and MTTR SLA matrix.pdf Operational SOC monitoring and threat-hunting capability are confirmed; current service and activity evidence should remain linked.",
     "status": "Partially Completed",
     "completion": 60,
     "requiredEvidence": [
@@ -7346,7 +7380,9 @@
     "sourceMaturity": 3,
     "sourceStatus": "Blank",
     "capabilities": [
-      "Cognna"
+      "Cognna",
+      "SOC monitoring",
+      "Threat hunting"
     ],
     "evidenceStatus": "Referenced — validate",
     "evidenceOwner": "Cybersecurity / Control Owner",
@@ -7364,7 +7400,7 @@
     "name": "Cyber Security Event Management",
     "requirement": "To support this process a security event monitoring standard should be defined, approved and implemented.",
     "applicability": "Applicable",
-    "implementation": "Information Security Event Monitoring Policy.pdf Incident Management Policy.pdf Cognna Threat Intelligence Mappng. MISP External Threat Intelligence Feed Integration. Cognna Muhlah Managed Assets Inventory.",
+    "implementation": "Information Security Event Monitoring Policy.pdf Incident Management Policy.pdf Cognna Threat Intelligence Mappng. MISP External Threat Intelligence Feed Integration. Cognna Muhlah Managed Assets Inventory. Operational SOC monitoring and threat-hunting capability are confirmed; current service and activity evidence should remain linked.",
     "status": "Partially Completed",
     "completion": 60,
     "requiredEvidence": [
@@ -7386,7 +7422,9 @@
     "sourceMaturity": 3,
     "sourceStatus": "Blank",
     "capabilities": [
-      "Cognna"
+      "Cognna",
+      "SOC monitoring",
+      "Threat hunting"
     ],
     "evidenceStatus": "Referenced — validate",
     "evidenceOwner": "Cybersecurity / Control Owner",
@@ -7404,7 +7442,7 @@
     "name": "Cyber Security Event Management",
     "requirement": "a. the standard should address for all information assets the mandatory events which should be monitored, based on the classification or risk profile of the information asset.",
     "applicability": "Applicable",
-    "implementation": "Information Security Event Monitoring Policy.pdf Incident Management Policy.pdf Cognna Threat Intelligence Mappng. MISP External Threat Intelligence Feed Integration. Cognna Muhlah Managed Assets Inventory.",
+    "implementation": "Information Security Event Monitoring Policy.pdf Incident Management Policy.pdf Cognna Threat Intelligence Mappng. MISP External Threat Intelligence Feed Integration. Cognna Muhlah Managed Assets Inventory. Operational SOC monitoring and threat-hunting capability are confirmed; current service and activity evidence should remain linked.",
     "status": "Partially Completed",
     "completion": 60,
     "requiredEvidence": [
@@ -7426,7 +7464,9 @@
     "sourceMaturity": 3,
     "sourceStatus": "Blank",
     "capabilities": [
-      "Cognna"
+      "Cognna",
+      "SOC monitoring",
+      "Threat hunting"
     ],
     "evidenceStatus": "Referenced — validate",
     "evidenceOwner": "Cybersecurity / Control Owner",
@@ -7444,7 +7484,7 @@
     "name": "Cyber Security Event Management",
     "requirement": "The security event management process should include requirements for:a. the establishment of a designated team responsible for security monitoring (i.e., Security Operations Center (SOC));",
     "applicability": "Applicable",
-    "implementation": "Information Security Event Monitoring Policy.pdf Muhlah - Cybersecurity Event Monitoring Process.docx Muhlah - Cybersecurity Event Monitoring Standard.docx",
+    "implementation": "Information Security Event Monitoring Policy.pdf Muhlah - Cybersecurity Event Monitoring Process.docx Muhlah - Cybersecurity Event Monitoring Standard.docx Operational SOC monitoring and threat-hunting capability are confirmed; current service and activity evidence should remain linked.",
     "status": "In Progress",
     "completion": 40,
     "requiredEvidence": [
@@ -7466,7 +7506,9 @@
     "sourceMaturity": 2,
     "sourceStatus": "Blank",
     "capabilities": [
-      "Cognna"
+      "Cognna",
+      "SOC monitoring",
+      "Threat hunting"
     ],
     "evidenceStatus": "Referenced — validate",
     "evidenceOwner": "Cybersecurity / Control Owner",
@@ -7484,7 +7526,7 @@
     "name": "Cyber Security Event Management",
     "requirement": "b. skilled and (continuously) trained staff;",
     "applicability": "Applicable",
-    "implementation": "Incident Management Policy. Salman Alqasmah – CompTIA CySA+. Salman Alqasmah – eCIR.",
+    "implementation": "Incident Management Policy. Salman Alqasmah – CompTIA CySA+. Salman Alqasmah – eCIR. Operational SOC monitoring and threat-hunting capability are confirmed; current service and activity evidence should remain linked.",
     "status": "Partially Completed",
     "completion": 60,
     "requiredEvidence": [
@@ -7506,7 +7548,9 @@
     "sourceMaturity": 3,
     "sourceStatus": "Blank",
     "capabilities": [
-      "Cognna"
+      "Cognna",
+      "SOC monitoring",
+      "Threat hunting"
     ],
     "evidenceStatus": "Referenced — validate",
     "evidenceOwner": "Cybersecurity / Control Owner",
@@ -7524,7 +7568,7 @@
     "name": "Cyber Security Event Management",
     "requirement": "c. a restricted area to facilitate SOC activities and workspaces;",
     "applicability": "Applicable",
-    "implementation": "restricted SOC/CERT workspace entrance and access-control reader. successful authorized badge access with a visible reader timestamp.",
+    "implementation": "restricted SOC/CERT workspace entrance and access-control reader. successful authorized badge access with a visible reader timestamp. Operational SOC monitoring and threat-hunting capability are confirmed; current service and activity evidence should remain linked.",
     "status": "Partially Completed",
     "completion": 60,
     "requiredEvidence": [
@@ -7546,7 +7590,9 @@
     "sourceMaturity": 3,
     "sourceStatus": "Blank",
     "capabilities": [
-      "Cognna"
+      "Cognna",
+      "SOC monitoring",
+      "Threat hunting"
     ],
     "evidenceStatus": "Referenced — validate",
     "evidenceOwner": "Cybersecurity / Control Owner",
@@ -7564,7 +7610,7 @@
     "name": "Cyber Security Event Management",
     "requirement": "d. resources required continuous security event monitoring activities (24x7);",
     "applicability": "Applicable",
-    "implementation": "Incident Management Policy.pdf SIEM alert evidence showing morning, evening, and night-shift activity.pdf",
+    "implementation": "Incident Management Policy.pdf SIEM alert evidence showing morning, evening, and night-shift activity.pdf Operational SOC monitoring and threat-hunting capability are confirmed; current service and activity evidence should remain linked.",
     "status": "Partially Completed",
     "completion": 60,
     "requiredEvidence": [
@@ -7586,7 +7632,9 @@
     "sourceMaturity": 3,
     "sourceStatus": "Blank",
     "capabilities": [
-      "Cognna"
+      "Cognna",
+      "SOC monitoring",
+      "Threat hunting"
     ],
     "evidenceStatus": "Referenced — validate",
     "evidenceOwner": "Cybersecurity / Control Owner",
@@ -7604,7 +7652,7 @@
     "name": "Cyber Security Event Management",
     "requirement": "e. detection and handling of malicious code and software;",
     "applicability": "Applicable",
-    "implementation": "Information Security Event Monitoring Policy.pdf",
+    "implementation": "Information Security Event Monitoring Policy.pdf Operational SOC monitoring and threat-hunting capability are confirmed; current service and activity evidence should remain linked.",
     "status": "Partially Completed",
     "completion": 60,
     "requiredEvidence": [
@@ -7626,7 +7674,9 @@
     "sourceMaturity": 3,
     "sourceStatus": "Blank",
     "capabilities": [
-      "Cognna"
+      "Cognna",
+      "SOC monitoring",
+      "Threat hunting"
     ],
     "evidenceStatus": "Referenced — validate",
     "evidenceOwner": "Cybersecurity / Control Owner",
@@ -7644,7 +7694,7 @@
     "name": "Cyber Security Event Management",
     "requirement": "f. detection and handling of security or suspicious events and anomalies;",
     "applicability": "Applicable",
-    "implementation": "Incident Management Policy.pdf SIEM alerts and use-case evidence for morning, evening, and night shifts.png Muhlah “Malicious Tools” detection rule and MITRE ATT&CK mapping.png Network security logs showing monitored traffic and event details.png",
+    "implementation": "Incident Management Policy.pdf SIEM alerts and use-case evidence for morning, evening, and night shifts.png Muhlah “Malicious Tools” detection rule and MITRE ATT&CK mapping.png Network security logs showing monitored traffic and event details.png Operational SOC monitoring and threat-hunting capability are confirmed; current service and activity evidence should remain linked.",
     "status": "Partially Completed",
     "completion": 60,
     "requiredEvidence": [
@@ -7666,7 +7716,9 @@
     "sourceMaturity": 3,
     "sourceStatus": "Blank",
     "capabilities": [
-      "Cognna"
+      "Cognna",
+      "SOC monitoring",
+      "Threat hunting"
     ],
     "evidenceStatus": "Referenced — validate",
     "evidenceOwner": "Cybersecurity / Control Owner",
@@ -7684,7 +7736,7 @@
     "name": "Cyber Security Event Management",
     "requirement": "g. deployment of security network packet analysis solution;",
     "applicability": "Applicable",
-    "implementation": "Incident Management Policy.pdf SAMA CSF Control 3.3.14-4.g – Network Traffic Analysis and Monitoring Evidence.pdf Cognna SIEM network logs.png SIEM alerts and use cases showing 24×7 monitoring activity.png FortiGate forward-traffic and log-detail screenshots.png",
+    "implementation": "Incident Management Policy.pdf SAMA CSF Control 3.3.14-4.g – Network Traffic Analysis and Monitoring Evidence.pdf Cognna SIEM network logs.png SIEM alerts and use cases showing 24×7 monitoring activity.png FortiGate forward-traffic and log-detail screenshots.png Operational SOC monitoring and threat-hunting capability are confirmed; current service and activity evidence should remain linked.",
     "status": "Partially Completed",
     "completion": 60,
     "requiredEvidence": [
@@ -7706,7 +7758,9 @@
     "sourceMaturity": 3,
     "sourceStatus": "Blank",
     "capabilities": [
-      "Cognna"
+      "Cognna",
+      "SOC monitoring",
+      "Threat hunting"
     ],
     "evidenceStatus": "Referenced — validate",
     "evidenceOwner": "Cybersecurity / Control Owner",
@@ -7724,7 +7778,7 @@
     "name": "Cyber Security Event Management",
     "requirement": "h. adequately protected logs;",
     "applicability": "Applicable",
-    "implementation": "Incident Management Policy.pdf Cognna Evidence Report.pdf SAMA Evidence Package – Centralized Audit and Endpoint Logging.pdf System-generated application logs for the Loans Service.pdf",
+    "implementation": "Incident Management Policy.pdf Cognna Evidence Report.pdf SAMA Evidence Package – Centralized Audit and Endpoint Logging.pdf System-generated application logs for the Loans Service.pdf Operational SOC monitoring and threat-hunting capability are confirmed; current service and activity evidence should remain linked.",
     "status": "In Progress",
     "completion": 40,
     "requiredEvidence": [
@@ -7746,7 +7800,9 @@
     "sourceMaturity": 2,
     "sourceStatus": "Blank",
     "capabilities": [
-      "Cognna"
+      "Cognna",
+      "SOC monitoring",
+      "Threat hunting"
     ],
     "evidenceStatus": "Referenced — validate",
     "evidenceOwner": "Cybersecurity / Control Owner",
@@ -7764,7 +7820,7 @@
     "name": "Cyber Security Event Management",
     "requirement": "i. periodic compliance monitoring of applications and infrastructure cyber security standards",
     "applicability": "Applicable",
-    "implementation": "Cognna Monthly Combined Summary Report, May 2026.pdf Monthly Combined Summary Report email.pdf Muhlah Requested Evidences – SOC KPI, log-source monitoring, use cases, and coverage.pdf",
+    "implementation": "Cognna Monthly Combined Summary Report, May 2026.pdf Monthly Combined Summary Report email.pdf Muhlah Requested Evidences – SOC KPI, log-source monitoring, use cases, and coverage.pdf Operational SOC monitoring and threat-hunting capability are confirmed; current service and activity evidence should remain linked.",
     "status": "In Progress",
     "completion": 40,
     "requiredEvidence": [
@@ -7786,7 +7842,9 @@
     "sourceMaturity": 2,
     "sourceStatus": "Blank",
     "capabilities": [
-      "Cognna"
+      "Cognna",
+      "SOC monitoring",
+      "Threat hunting"
     ],
     "evidenceStatus": "Referenced — validate",
     "evidenceOwner": "Cybersecurity / Control Owner",
@@ -7804,7 +7862,7 @@
     "name": "Cyber Security Event Management",
     "requirement": "j. automated and centralized analysis of security loggings and correlation of event or patterns (i.e., Security Information and Event Management (SIEM));",
     "applicability": "Applicable",
-    "implementation": "Incident Management Policy.pdf Cognna MISP external threat-intelligence feed integration.pdf Cognna global threat-intelligence monitoring dashboard.png Cognna SIEM alerts showing morning, evening, and night monitoring.png",
+    "implementation": "Incident Management Policy.pdf Cognna MISP external threat-intelligence feed integration.pdf Cognna global threat-intelligence monitoring dashboard.png Cognna SIEM alerts showing morning, evening, and night monitoring.png Operational SOC monitoring and threat-hunting capability are confirmed; current service and activity evidence should remain linked.",
     "status": "Partially Completed",
     "completion": 60,
     "requiredEvidence": [
@@ -7826,7 +7884,9 @@
     "sourceMaturity": 3,
     "sourceStatus": "Blank",
     "capabilities": [
-      "Cognna"
+      "Cognna",
+      "SOC monitoring",
+      "Threat hunting"
     ],
     "evidenceStatus": "Referenced — validate",
     "evidenceOwner": "Cybersecurity / Control Owner",
@@ -7844,7 +7904,7 @@
     "name": "Cyber Security Event Management",
     "requirement": "k. reporting of cyber security incidents;",
     "applicability": "Applicable",
-    "implementation": "Incident Management Policy.pdf Cognna SIEM alert and 24×7 monitoring evidence.png Cognna Case Management dashboard.png",
+    "implementation": "Incident Management Policy.pdf Cognna SIEM alert and 24×7 monitoring evidence.png Cognna Case Management dashboard.png Operational SOC monitoring and threat-hunting capability are confirmed; current service and activity evidence should remain linked.",
     "status": "Partially Completed",
     "completion": 60,
     "requiredEvidence": [
@@ -7866,7 +7926,9 @@
     "sourceMaturity": 3,
     "sourceStatus": "Blank",
     "capabilities": [
-      "Cognna"
+      "Cognna",
+      "SOC monitoring",
+      "Threat hunting"
     ],
     "evidenceStatus": "Referenced — validate",
     "evidenceOwner": "Cybersecurity / Control Owner",
@@ -7884,7 +7946,7 @@
     "name": "Cyber Security Event Management",
     "requirement": "l. independent periodic testing of the effectiveness of the security operations center (e.g., red-teaming).",
     "applicability": "Applicable",
-    "implementation": "Approved Incident Management Policy.pdf Requirement for periodic incident simulation.pdf Operational SOC alerts, cases, MTTD, MTTR and 24×7 monitoring evidence.png",
+    "implementation": "Approved Incident Management Policy.pdf Requirement for periodic incident simulation.pdf Operational SOC alerts, cases, MTTD, MTTR and 24×7 monitoring evidence.png Operational SOC monitoring and threat-hunting capability are confirmed; current service and activity evidence should remain linked.",
     "status": "In Progress",
     "completion": 40,
     "requiredEvidence": [
@@ -7906,7 +7968,9 @@
     "sourceMaturity": 2,
     "sourceStatus": "Blank",
     "capabilities": [
-      "Cognna"
+      "Cognna",
+      "SOC monitoring",
+      "Threat hunting"
     ],
     "evidenceStatus": "Referenced — validate",
     "evidenceOwner": "Cybersecurity / Control Owner",
@@ -7942,7 +8006,7 @@
     "priority": "High",
     "targetDate": "Needs Verification",
     "dependencies": [
-      "DFIR specialist capacity",
+      "DFIR analyst hiring",
       "Approved incident procedures",
       "Exercise and incident evidence"
     ],
@@ -7987,7 +8051,7 @@
     "priority": "High",
     "targetDate": "Needs Verification",
     "dependencies": [
-      "DFIR specialist capacity",
+      "DFIR analyst hiring",
       "Approved incident procedures",
       "Exercise and incident evidence"
     ],
@@ -8032,7 +8096,7 @@
     "priority": "High",
     "targetDate": "Needs Verification",
     "dependencies": [
-      "DFIR specialist capacity",
+      "DFIR analyst hiring",
       "Approved incident procedures",
       "Exercise and incident evidence"
     ],
@@ -8077,7 +8141,7 @@
     "priority": "High",
     "targetDate": "Needs Verification",
     "dependencies": [
-      "DFIR specialist capacity",
+      "DFIR analyst hiring",
       "Approved incident procedures",
       "Exercise and incident evidence"
     ],
@@ -8122,7 +8186,7 @@
     "priority": "High",
     "targetDate": "Needs Verification",
     "dependencies": [
-      "DFIR specialist capacity",
+      "DFIR analyst hiring",
       "Approved incident procedures",
       "Exercise and incident evidence"
     ],
@@ -8167,7 +8231,7 @@
     "priority": "High",
     "targetDate": "Needs Verification",
     "dependencies": [
-      "DFIR specialist capacity",
+      "DFIR analyst hiring",
       "Approved incident procedures",
       "Exercise and incident evidence"
     ],
@@ -8212,7 +8276,7 @@
     "priority": "High",
     "targetDate": "Needs Verification",
     "dependencies": [
-      "DFIR specialist capacity",
+      "DFIR analyst hiring",
       "Approved incident procedures",
       "Exercise and incident evidence"
     ],
@@ -8257,7 +8321,7 @@
     "priority": "High",
     "targetDate": "Needs Verification",
     "dependencies": [
-      "DFIR specialist capacity",
+      "DFIR analyst hiring",
       "Approved incident procedures",
       "Exercise and incident evidence"
     ],
@@ -8302,7 +8366,7 @@
     "priority": "High",
     "targetDate": "Needs Verification",
     "dependencies": [
-      "DFIR specialist capacity",
+      "DFIR analyst hiring",
       "Approved incident procedures",
       "Exercise and incident evidence"
     ],
@@ -8347,7 +8411,7 @@
     "priority": "High",
     "targetDate": "Needs Verification",
     "dependencies": [
-      "DFIR specialist capacity",
+      "DFIR analyst hiring",
       "Approved incident procedures",
       "Exercise and incident evidence"
     ],
@@ -8392,7 +8456,7 @@
     "priority": "High",
     "targetDate": "Needs Verification",
     "dependencies": [
-      "DFIR specialist capacity",
+      "DFIR analyst hiring",
       "Approved incident procedures",
       "Exercise and incident evidence"
     ],
@@ -8437,7 +8501,7 @@
     "priority": "High",
     "targetDate": "Needs Verification",
     "dependencies": [
-      "DFIR specialist capacity",
+      "DFIR analyst hiring",
       "Approved incident procedures",
       "Exercise and incident evidence"
     ],
@@ -8482,7 +8546,7 @@
     "priority": "High",
     "targetDate": "Needs Verification",
     "dependencies": [
-      "DFIR specialist capacity",
+      "DFIR analyst hiring",
       "Approved incident procedures",
       "Exercise and incident evidence"
     ],
@@ -8527,7 +8591,7 @@
     "priority": "High",
     "targetDate": "Needs Verification",
     "dependencies": [
-      "DFIR specialist capacity",
+      "DFIR analyst hiring",
       "Approved incident procedures",
       "Exercise and incident evidence"
     ],
@@ -8572,7 +8636,7 @@
     "priority": "High",
     "targetDate": "Needs Verification",
     "dependencies": [
-      "DFIR specialist capacity",
+      "DFIR analyst hiring",
       "Approved incident procedures",
       "Exercise and incident evidence"
     ],
@@ -8617,7 +8681,7 @@
     "priority": "High",
     "targetDate": "2026-12-13T00:00:00",
     "dependencies": [
-      "DFIR specialist capacity",
+      "DFIR analyst hiring",
       "Approved incident procedures",
       "Exercise and incident evidence"
     ],
@@ -8662,7 +8726,7 @@
     "priority": "High",
     "targetDate": "Needs Verification",
     "dependencies": [
-      "DFIR specialist capacity",
+      "DFIR analyst hiring",
       "Approved incident procedures",
       "Exercise and incident evidence"
     ],
@@ -8689,7 +8753,7 @@
     "name": "Threat Management",
     "requirement": "The threat intelligence management process should be defined, approved and implemented.",
     "applicability": "Applicable",
-    "implementation": "Muhlah - Threat Intelligence Management process.docx",
+    "implementation": "Muhlah - Threat Intelligence Management process.docx Operational SOC monitoring and threat-hunting capability are confirmed; current service and activity evidence should remain linked.",
     "status": "In Progress",
     "completion": 40,
     "requiredEvidence": [
@@ -8712,7 +8776,8 @@
     "sourceStatus": "Blank",
     "capabilities": [
       "CTM360",
-      "Cognna"
+      "Cognna",
+      "Threat hunting"
     ],
     "evidenceStatus": "Referenced — validate",
     "evidenceOwner": "Cybersecurity / Control Owner",
@@ -8730,7 +8795,7 @@
     "name": "Threat Management",
     "requirement": "The effectiveness of the threat intelligence management process should be measured and periodically evaluated.",
     "applicability": "Applicable",
-    "implementation": "Ref:Muhalah CS Centralized KPI Register v1.5.xlsx",
+    "implementation": "Ref:Muhalah CS Centralized KPI Register v1.5.xlsx Operational SOC monitoring and threat-hunting capability are confirmed; current service and activity evidence should remain linked.",
     "status": "Partially Completed",
     "completion": 60,
     "requiredEvidence": [
@@ -8753,7 +8818,8 @@
     "sourceStatus": "Blank",
     "capabilities": [
       "CTM360",
-      "Cognna"
+      "Cognna",
+      "Threat hunting"
     ],
     "evidenceStatus": "Referenced — validate",
     "evidenceOwner": "Cybersecurity / Control Owner",
@@ -8771,7 +8837,7 @@
     "name": "Threat Management",
     "requirement": "The threat intelligence management process should include:a. the use of internal sources, such as access control, application and infrastructure logs, IDS, IPS, security tooling, Security Information and Event Monitoring (SIEM), support functions (e.g., Legal, Audit, IT Helpdesk, Forensics, Fraud Management, Risk Management, Compliance);b. the use of reliable and relevant external sources, such as SAMA, government agencies, security forums, (security) vendors, security organizations and specialist notification services;c. a defined methodology to analyze the threat information periodically;d. the relevant details on identified or collected threats, such as modus operandi, actors, motivation and type of threats;e. the relevance of the derived intelligence and the action-ability for follow-up (for e.g., SOC, Risk Management);f. sharing the relevant intelligence with the relevant stakeholders (e.g., SAMA, BCIS members).",
     "applicability": "Applicable",
-    "implementation": "3.3.16-3.f – Threat Intelligence Sharing with SAMA and SOC Stakeholders.png 3.3.16-3.b – External Threat Intelligence Feeds Integration (MISP, Abuse.ch, OSINT).png",
+    "implementation": "3.3.16-3.f – Threat Intelligence Sharing with SAMA and SOC Stakeholders.png 3.3.16-3.b – External Threat Intelligence Feeds Integration (MISP, Abuse.ch, OSINT).png Operational SOC monitoring and threat-hunting capability are confirmed; current service and activity evidence should remain linked.",
     "status": "In Progress",
     "completion": 40,
     "requiredEvidence": [
@@ -8794,7 +8860,8 @@
     "sourceStatus": "Blank",
     "capabilities": [
       "CTM360",
-      "Cognna"
+      "Cognna",
+      "Threat hunting"
     ],
     "evidenceStatus": "Referenced — validate",
     "evidenceOwner": "Cybersecurity / Control Owner",
@@ -8825,14 +8892,14 @@
     ],
     "missingEvidence": [],
     "gap": "Current maturity is below the ML3 target.",
-    "requiredAction": "Complete the NOC dependency and validate scanning, remediation and reporting evidence.",
+    "requiredAction": "Complete the final Qualys implementation step and validate scanning, remediation and reporting evidence.",
     "owner": "Cybersecurity / IT",
     "priority": "High",
     "targetDate": "Needs Verification",
     "dependencies": [
+      "Final implementation step",
       "SAMA No Objection / NOC",
-      "Approved vulnerability-management process",
-      "Scanning and remediation evidence"
+      "Validated scanning and remediation evidence"
     ],
     "notes": "Source: SAMA-CSF-SelfAssessment AUG 24.xlsx, row 223. Workbook status: blank. Workbook maturity: 2-Repeatable but informal.",
     "sourceMaturity": 2,
@@ -8869,14 +8936,14 @@
     ],
     "missingEvidence": [],
     "gap": "Validate the recorded maturity against approved evidence and operating effectiveness.",
-    "requiredAction": "Complete the NOC dependency and validate scanning, remediation and reporting evidence.",
+    "requiredAction": "Complete the final Qualys implementation step and validate scanning, remediation and reporting evidence.",
     "owner": "Cybersecurity / IT",
     "priority": "High",
     "targetDate": "Needs Verification",
     "dependencies": [
+      "Final implementation step",
       "SAMA No Objection / NOC",
-      "Approved vulnerability-management process",
-      "Scanning and remediation evidence"
+      "Validated scanning and remediation evidence"
     ],
     "notes": "Source: SAMA-CSF-SelfAssessment AUG 24.xlsx, row 224. Workbook status: blank. Workbook maturity: 3-Structured & formalized.",
     "sourceMaturity": 3,
@@ -8913,14 +8980,14 @@
       "Control-specific evidence has not been linked"
     ],
     "gap": "Validate the recorded maturity against approved evidence and operating effectiveness.",
-    "requiredAction": "Complete the NOC dependency and validate scanning, remediation and reporting evidence.",
+    "requiredAction": "Complete the final Qualys implementation step and validate scanning, remediation and reporting evidence.",
     "owner": "Cybersecurity / IT",
     "priority": "High",
     "targetDate": "Needs Verification",
     "dependencies": [
+      "Final implementation step",
       "SAMA No Objection / NOC",
-      "Approved vulnerability-management process",
-      "Scanning and remediation evidence"
+      "Validated scanning and remediation evidence"
     ],
     "notes": "Source: SAMA-CSF-SelfAssessment AUG 24.xlsx, row 225. Workbook status: blank. Workbook maturity: 3-Structured & formalized.",
     "sourceMaturity": 3,
