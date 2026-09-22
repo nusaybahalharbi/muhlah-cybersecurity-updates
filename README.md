@@ -6,14 +6,14 @@ Centralized cybersecurity governance, SAMA CSF readiness, security operations, i
 
 ## Overview
 
-The Muhlah Cybersecurity Command Center gives the Cybersecurity Department, CEO, executive management, and Cybersecurity Committee a single decision-ready view of posture, delivery, risk, evidence, resources, and management attention.
+The Muhlah Cybersecurity Progress & Compliance Dashboard gives the Cybersecurity Department, CEO, executive management, and Cybersecurity Committee a single decision-ready view of readiness, maturity, delivery, risk, evidence, resources, and management attention.
 
 All initial content is planning/demo data derived from the project brief. Unverified facts are marked **Needs Verification** and risk ratings are **Unrated**. The application does not claim regulatory compliance or completed work without evidence.
 
 ## Features
 
 - Executive KPI command center and management decision queue
-- Workbook-backed SAMA CSF module with all 147 control requirements across 36 families and four domains
+- Workbook-backed SAMA CSF module with all 249 unique controls across 35 subdomains and four domains
 - Executive SAMA progress, control-level assessment, evidence management, remediation and technology mapping
 - Dynamic risk register and unrated risk matrix
 - Security stack, procurement portfolio, and vulnerability-management lifecycle
@@ -55,7 +55,7 @@ Update validated operational records in `data/dashboard.ts` and SAMA assessment 
 
 ## SAMA assessment methodology
 
-The source workbook contains 147 atomic control requirements grouped into 36 control families. Progress is calculated across applicable requirements using: Completed 100%, Partially Completed 60%, In Progress 40%, Blocked / Waiting for Approval 30%, Requires Evidence / Verification 20%, and Not Started 0%. Not Applicable controls are excluded. The result is a remediation progress indicator—not a regulatory certification or formal compliance opinion.
+The source workbook contains 249 unique controls grouped into 35 subdomains and four domains. The workbook's blank status fields remain unclaimed: no control is presented as confirmed closed without an explicit source status. Recorded maturity is shown separately from the management assessment-progress indicator. Not Applicable controls are excluded from ML3 coverage. Dependencies and approvals are reported as dependencies rather than as completed work or invented blockers. The result is a readiness indicator—not a regulatory certification or formal compliance opinion.
 
 ## Security requirements
 

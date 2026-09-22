@@ -2,11 +2,11 @@ import { Action, Control, Evidence, Kpi, Project, Risk, RoadmapLane, SamaDomain,
 
 export const dataNotice = "Demo and planning data only. Unverified values are explicitly labelled and must not be used as an assertion of compliance.";
 
-export const samaSummary = { total: 237, closed: null, inProgress: null, notStarted: null, blocked: null, notApplicable: null, completion: null, currentMaturity: null, targetMaturity: 3 };
+export const samaSummary = { total: 249, closed: null, inProgress: null, notStarted: null, blocked: 0, notApplicable: 13, completion: 30, currentMaturity: null, targetMaturity: 3 };
 
 export const kpis: Kpi[] = [
-  { label: "SAMA CSF", primary: "30% assessed", secondary: "147 requirements • Target ML3", tone: "teal", section: "sama" },
-  { label: "Cybersecurity Projects", primary: "7 tracked", secondary: "1 blocked; dependencies visible", tone: "blue", section: "roadmap" },
+  { label: "SAMA CSF", primary: "30% assessed", secondary: "249 controls • Target ML3", tone: "teal", section: "sama" },
+  { label: "Cybersecurity Projects", primary: "7 tracked", secondary: "Dependencies visible", tone: "blue", section: "roadmap" },
   { label: "Critical Risks", primary: "Unrated", secondary: "Assign ratings in risk register", tone: "red", section: "risks" },
   { label: "Security Solutions", primary: "8 operational", secondary: "ManageEngine starting • Qualys awaiting NOC", tone: "violet", section: "stack" },
   { label: "Vulnerabilities", primary: "Needs Verification", secondary: "Critical / High / Medium / Low", tone: "amber", section: "stack" },
@@ -49,7 +49,7 @@ export const risks: Risk[] = [
   ["R-002","WAF improvement area","Public web/application protection capability requires review","Public applications","Web application attack","WAF status not fully established","Unrated","Unrated","Unrated","Cloud-native and application controls","Unrated","Confirm architecture and implement proportionate WAF controls","Technology / Cybersecurity","Needs Verification","Gap","Configuration and monitoring evidence"],
   ["R-003","Architecture maturity","Cybersecurity architecture governance and artifacts require development","Enterprise technology","Design inconsistency","Limited approved HLD/LLD and target architecture","Unrated","Unrated","Unrated","Security reviews and existing controls","Unrated","Training, governance and architecture artifacts","Cybersecurity","Needs Verification","In Progress","Architecture pack"],
   ["R-004","Vulnerability management rollout","Selected platform is not yet confirmed operational","Technology estate","Unremediated vulnerabilities","Incomplete scanning and remediation lifecycle","Unrated","Unrated","Unrated","Existing monitoring and security testing","Unrated","Complete Qualys implementation and metrics","Cybersecurity / Technology","Needs Verification","In Progress","Procurement and scan evidence"],
-  ["R-005","PT / Red Team dependency","Meaningful internal testing depends on segmentation readiness","Internal network","Control weakness remains unvalidated","Infrastructure prerequisite","Unrated","Unrated","Unrated","Planned VA and security monitoring","Unrated","Segmentation → VA → PT / Red Team","Cybersecurity / Technology","Needs Verification","Blocked","Dependency approval"],
+  ["R-005","PT / Red Team dependency","Meaningful internal testing depends on segmentation readiness","Internal network","Control weakness remains unvalidated","Infrastructure prerequisite","Unrated","Unrated","Unrated","Planned VA and security monitoring","Unrated","Segmentation → VA → PT / Red Team","Cybersecurity / Technology","Needs Verification","Planned","Segmentation and VA dependency"],
   ["R-006","BYOD device compliance","Unmanaged devices could attempt access to corporate services","Identity and endpoints","Unauthorized access / data loss","Device compliance coverage needs verification","Unrated","Unrated","Unrated","MFA, Conditional Access, UEM and DLP capabilities","Unrated","Enforce compliant device access policy","IT / Cybersecurity","Needs Verification","In Progress","Access policy evidence"],
   ["R-007","Third-party dependency","Critical services rely on external providers","Critical services","Vendor disruption or control failure","Assurance depth varies by provider","Unrated","Unrated","Unrated","Contracts, assessments and SOC reports where available","Unrated","Risk-tiered assurance and review calendar","Business Owners / Cybersecurity","Needs Verification","In Progress","Vendor assessments"],
   ["R-008","BCM / DR maturity","Resilience documentation and testing require continued development","Critical business services","Service disruption","BIA, plans and test evidence need maturation","Unrated","Unrated","Unrated","Provider resilience and existing plans","Unrated","Complete BIA, BCP, DR plans and exercises","BCM / Technology / Cybersecurity","Needs Verification","In Progress","BIA and exercise evidence"],
@@ -66,7 +66,7 @@ export const solutions: Solution[] = [
   { name:"Fortinet / FortiGate", capability:"Perimeter firewall, VPN and secure connectivity", status:"Operational", owner:"IT", note:"Target state includes managed switching and segmentation." },
   { name:"BitRaser", capability:"Secure data and device wiping", status:"Operational", owner:"IT / Cybersecurity", note:"Maintain destruction evidence." },
   { name:"ManageEngine ServiceDesk Plus", capability:"IT/security service workflows, JML and operational processes", status:"In Progress", owner:"IT", note:"Implementation starts 21 September 2026." },
-  { name:"Qualys", capability:"Vulnerability scanning, prioritisation, reporting and remediation tracking", status:"Blocked", owner:"Cybersecurity", note:"Implementation completed; waiting for No Objection / NOC. This does not establish control compliance." },
+  { name:"Qualys", capability:"Vulnerability scanning, prioritisation, reporting and remediation tracking", status:"In Progress", owner:"Cybersecurity", note:"Implementation completed. Dependency: SAMA No Objection / NOC and validated operating evidence." },
 ];
 
 export const projects: Project[] = [
@@ -74,7 +74,7 @@ export const projects: Project[] = [
   { name:"Qualys rollout", workstream:"Vulnerability Management", status:"In Progress", progress:null, owner:"Cybersecurity", dueDate:"Needs Verification", dependency:"Procurement / implementation" },
   { name:"WAF improvement", workstream:"Application Security", status:"Planned", progress:null, owner:"Technology / Cybersecurity", dueDate:"Needs Verification", dependency:"Architecture decision" },
   { name:"Internal VA", workstream:"Assurance", status:"Planned", progress:null, owner:"Cybersecurity", dueDate:"Needs Verification", dependency:"Segmentation readiness" },
-  { name:"PT / Red Team", workstream:"Assurance", status:"Blocked", progress:null, owner:"Cybersecurity", dueDate:"Needs Verification", dependency:"Segmentation → VA" },
+  { name:"PT / Red Team", workstream:"Assurance", status:"Planned", progress:null, owner:"Cybersecurity", dueDate:"Needs Verification", dependency:"Network segmentation → vulnerability assessment" },
   { name:"Architecture HLD / LLD", workstream:"Architecture", status:"In Progress", progress:null, owner:"Cybersecurity", dueDate:"Needs Verification", dependency:"Governance and capability development" },
   { name:"BIA / BCP / DR maturity", workstream:"Resilience", status:"In Progress", progress:null, owner:"BCM / Technology", dueDate:"Needs Verification", dependency:"Business ownership" },
 ];
@@ -94,7 +94,7 @@ export const vendors: Vendor[] = [
 
 export const managementActions: Action[] = [
   { issue:"Network segmentation prerequisite", impact:"Delays meaningful internal VA and PT / Red Team validation", decision:"Confirm delivery ownership, dates and dependencies", owner:"COO / Technology", deadline:"Needs Verification", status:"In Progress" },
-  { issue:"Qualys No Objection / NOC", impact:"Vulnerability-management implementation cannot be treated as fully approved or compliant", decision:"Track and obtain the required No Objection / NOC", owner:"Cybersecurity / Compliance", deadline:"Needs Verification", status:"Blocked" },
+  { issue:"Qualys regulatory dependency", impact:"Vulnerability-management implementation cannot be treated as fully approved or compliant", decision:"Dependency: obtain the required No Objection / NOC", owner:"Cybersecurity / Compliance", deadline:"Needs Verification", status:"In Progress" },
   { issue:"WAF improvement decision", impact:"Public application protection requires a confirmed target control", decision:"Approve proportionate WAF architecture and plan", owner:"Technology / Cybersecurity", deadline:"Needs Verification", status:"Planned" },
   { issue:"Architecture capability", impact:"HLD/LLD and target architecture maturity are constrained", decision:"Approve professional development and architecture governance plan", owner:"Management / HR", deadline:"Needs Verification", status:"Pending Approval" },
   { issue:"Senior Cybersecurity Architect role", impact:"Dedicated architecture capacity deferred", decision:"Maintain hold or revisit resourcing decision", owner:"Board / Management", deadline:"Needs Verification", status:"On Hold" },
@@ -104,7 +104,7 @@ export const roadmap: RoadmapLane[] = [
   { name:"Governance", stages:[{label:"Policies",status:"In Progress"},{label:"Evidence",status:"In Progress"},{label:"Risk",status:"In Progress"},{label:"SAMA ML3",status:"Planned"}] },
   { name:"Infrastructure", stages:[{label:"Managed switching",status:"Planned"},{label:"Segmentation",status:"In Progress"},{label:"NDR",status:"Planned"},{label:"Validation",status:"Planned"}] },
   { name:"Vulnerability", stages:[{label:"Qualys",status:"In Progress"},{label:"Scanning",status:"Planned"},{label:"Remediation",status:"Planned"},{label:"Metrics",status:"Planned"}] },
-  { name:"Application", stages:[{label:"SDLC",status:"In Progress"},{label:"SAST",status:"In Progress"},{label:"VA",status:"Planned"},{label:"WAF",status:"Gap"},{label:"PT",status:"Blocked"}] },
+  { name:"Application", stages:[{label:"SDLC",status:"In Progress"},{label:"SAST",status:"In Progress"},{label:"VA",status:"Planned"},{label:"WAF",status:"Gap"},{label:"PT — segmentation dependency",status:"Planned"}] },
   { name:"Architecture", stages:[{label:"Governance",status:"In Progress"},{label:"SABSA / TOGAF",status:"Proposed" as never},{label:"HLD / LLD",status:"Planned"},{label:"Target architecture",status:"Planned"}] },
   { name:"Resilience", stages:[{label:"BIA",status:"In Progress"},{label:"BCP",status:"In Progress"},{label:"DR",status:"In Progress"},{label:"Testing",status:"Planned"}] },
   { name:"People", stages:[{label:"Hiring",status:"On Hold"},{label:"Training",status:"Pending Approval"},{label:"Awareness",status:"Operational"},{label:"Specialist capability",status:"Planned"}] },
