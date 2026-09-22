@@ -8,15 +8,15 @@ export const kpis: Kpi[] = [
   { label: "SAMA CSF", primary: "30% assessed", secondary: "249 controls • Target ML3", tone: "teal", section: "sama" },
   { label: "Cybersecurity Projects", primary: "7 tracked", secondary: "Dependencies visible", tone: "blue", section: "roadmap" },
   { label: "Critical Risks", primary: "Unrated", secondary: "Assign ratings in risk register", tone: "red", section: "risks" },
-  { label: "Security Solutions", primary: "8 operational", secondary: "ManageEngine starting • Qualys awaiting NOC", tone: "violet", section: "stack" },
+  { label: "Security Solutions", primary: "10 operational", secondary: "ManageEngine implementing • Qualys final step", tone: "violet", section: "stack" },
   { label: "Vulnerabilities", primary: "Needs Verification", secondary: "Critical / High / Medium / Low", tone: "amber", section: "stack" },
   { label: "Incidents", primary: "Needs Verification", secondary: "Open / Closed / SLA breached", tone: "blue", section: "overview" },
   { label: "Third Parties", primary: "10 tracked", secondary: "Assessment status editable", tone: "violet", section: "third-parties" },
   { label: "Awareness", primary: "100%", secondary: "All employees completed • evidence to attach", tone: "teal", section: "people" },
   { label: "Infrastructure", primary: "Segmentation", secondary: "Improvement in progress", tone: "amber", section: "infrastructure" },
   { label: "Documents / Evidence", primary: "Growing repository", secondary: "Readiness needs verification", tone: "blue", section: "sama" },
-  { label: "Hiring", primary: "1 DFIR planned", secondary: "Architecture capability via training", tone: "red", section: "people" },
-  { label: "Training", primary: "Proposed", secondary: "SABSA / TOGAF evaluation", tone: "teal", section: "people" },
+  { label: "Hiring", primary: "DFIR hiring active", secondary: "Recruitment in progress", tone: "red", section: "people" },
+  { label: "Training", primary: "Planned", secondary: "Architecture certification and application", tone: "teal", section: "people" },
 ];
 
 export const maturityDomains: SamaDomain[] = [
@@ -57,21 +57,23 @@ export const risks: Risk[] = [
 ].map(r => ({ id:r[0], risk:r[1], description:r[2], asset:r[3], threat:r[4], vulnerability:r[5], likelihood:r[6], impact:r[7], inherent:r[8], controls:r[9], residual:r[10], treatment:r[11], owner:r[12], targetDate:r[13], status:r[14], evidence:r[15] } as Risk));
 
 export const solutions: Solution[] = [
-  { name:"Cognna", capability:"SOC / SOCaaS, SIEM monitoring, alerts and incident visibility", status:"Operational", owner:"Cybersecurity", note:"Operational scope and SLA should be periodically verified." },
-  { name:"Netskope", capability:"SWG, web/cloud controls, real-time protection, restrictions and relevant IPS", status:"Operational", owner:"Cybersecurity / IT", note:"Policy scope includes cloud and web application governance." },
+  { name:"Cognna", capability:"SOC / SOCaaS, SIEM monitoring, security monitoring and threat hunting", status:"Operational", owner:"Cybersecurity", note:"SOC monitoring and threat hunting are operational; retain service and activity evidence." },
+  { name:"Netskope", capability:"SWG, web/cloud controls, real-time protection, restrictions and relevant IPS", status:"Operational", owner:"Cybersecurity / IT", note:"Implemented across all Muhlah devices and applicable third-party devices." },
   { name:"KnowBe4", capability:"Security awareness and phishing training", status:"Operational", owner:"Cybersecurity", note:"Campaign metrics remain editable." },
   { name:"CTM360", capability:"External attack surface, digital risk and brand protection", status:"Operational", owner:"Cybersecurity", note:"Coverage and open findings require routine review." },
   { name:"BlackBerry UEM", capability:"MDM, BYOD controls, device enrolment and identity integration", status:"Operational", owner:"IT / Cybersecurity", note:"Compliance enforcement status needs verification." },
   { name:"Microsoft Security", capability:"DLP, sensitivity labels, email controls, external sender warning, Conditional Access / Intune", status:"Operational", owner:"IT / Cybersecurity", note:"Top Secret, Secret, Confidential, Internal, Public." },
   { name:"Fortinet / FortiGate", capability:"Perimeter firewall, VPN and secure connectivity", status:"Operational", owner:"IT", note:"Target state includes managed switching and segmentation." },
   { name:"BitRaser", capability:"Secure data and device wiping", status:"Operational", owner:"IT / Cybersecurity", note:"Maintain destruction evidence." },
-  { name:"ManageEngine ServiceDesk Plus", capability:"IT/security service workflows, JML and operational processes", status:"In Progress", owner:"IT", note:"Implementation starts 21 September 2026." },
-  { name:"Qualys", capability:"Vulnerability scanning, prioritisation, reporting and remediation tracking", status:"In Progress", owner:"Cybersecurity", note:"Implementation completed. Dependency: SAMA No Objection / NOC and validated operating evidence." },
+  { name:"DIPU", capability:"Secure disposal support and controlled destruction", status:"Operational", owner:"IT / Cybersecurity", note:"Maintain disposal, handover and destruction evidence." },
+  { name:"Application Whitelisting", capability:"Approved-application execution controls", status:"Operational", owner:"IT / Cybersecurity", note:"Implemented; policy coverage and operating evidence should remain current." },
+  { name:"ManageEngine ServiceDesk Plus", capability:"IT/security service workflows, JML and operational processes", status:"In Progress", owner:"IT", note:"Currently in the implementation phase." },
+  { name:"Qualys", capability:"Vulnerability scanning, prioritisation, reporting and remediation tracking", status:"In Progress", owner:"Cybersecurity", note:"In the final implementation step; remaining dependencies include NOC and validated operating evidence." },
 ];
 
 export const projects: Project[] = [
   { name:"Network segmentation", workstream:"Infrastructure", status:"In Progress", progress:null, owner:"IT / Cybersecurity", dueDate:"Needs Verification", dependency:"Managed switches and VLAN design" },
-  { name:"Qualys rollout", workstream:"Vulnerability Management", status:"In Progress", progress:null, owner:"Cybersecurity", dueDate:"Needs Verification", dependency:"Procurement / implementation" },
+  { name:"Qualys rollout", workstream:"Vulnerability Management", status:"In Progress", progress:null, owner:"Cybersecurity", dueDate:"Needs Verification", dependency:"Final implementation step / operating validation" },
   { name:"WAF improvement", workstream:"Application Security", status:"Planned", progress:null, owner:"Technology / Cybersecurity", dueDate:"Needs Verification", dependency:"Architecture decision" },
   { name:"Internal VA", workstream:"Assurance", status:"Planned", progress:null, owner:"Cybersecurity", dueDate:"Needs Verification", dependency:"Segmentation readiness" },
   { name:"PT / Red Team", workstream:"Assurance", status:"Planned", progress:null, owner:"Cybersecurity", dueDate:"Needs Verification", dependency:"Network segmentation → vulnerability assessment" },
@@ -96,7 +98,7 @@ export const managementActions: Action[] = [
   { issue:"Network segmentation prerequisite", impact:"Delays meaningful internal VA and PT / Red Team validation", decision:"Confirm delivery ownership, dates and dependencies", owner:"COO / Technology", deadline:"Needs Verification", status:"In Progress" },
   { issue:"Qualys regulatory dependency", impact:"Vulnerability-management implementation cannot be treated as fully approved or compliant", decision:"Dependency: obtain the required No Objection / NOC", owner:"Cybersecurity / Compliance", deadline:"Needs Verification", status:"In Progress" },
   { issue:"WAF improvement decision", impact:"Public application protection requires a confirmed target control", decision:"Approve proportionate WAF architecture and plan", owner:"Technology / Cybersecurity", deadline:"Needs Verification", status:"Planned" },
-  { issue:"Architecture capability", impact:"HLD/LLD and target architecture maturity are constrained", decision:"Approve professional development and architecture governance plan", owner:"Management / HR", deadline:"Needs Verification", status:"Pending Approval" },
+  { issue:"Architecture capability development", impact:"Architecture maturity depends on developing and applying internal capability", decision:"Support planned architecture certification and its application within Muhlah", owner:"Management / HR / Cybersecurity", deadline:"Needs Verification", status:"Planned" },
   { issue:"Senior Cybersecurity Architect role", impact:"Dedicated architecture capacity deferred", decision:"Maintain hold or revisit resourcing decision", owner:"Board / Management", deadline:"Needs Verification", status:"On Hold" },
 ];
 
@@ -107,7 +109,7 @@ export const roadmap: RoadmapLane[] = [
   { name:"Application", stages:[{label:"SDLC",status:"In Progress"},{label:"SAST",status:"In Progress"},{label:"VA",status:"Planned"},{label:"WAF",status:"Gap"},{label:"PT — segmentation dependency",status:"Planned"}] },
   { name:"Architecture", stages:[{label:"Governance",status:"In Progress"},{label:"SABSA / TOGAF",status:"Proposed" as never},{label:"HLD / LLD",status:"Planned"},{label:"Target architecture",status:"Planned"}] },
   { name:"Resilience", stages:[{label:"BIA",status:"In Progress"},{label:"BCP",status:"In Progress"},{label:"DR",status:"In Progress"},{label:"Testing",status:"Planned"}] },
-  { name:"People", stages:[{label:"Hiring",status:"On Hold"},{label:"Training",status:"Pending Approval"},{label:"Awareness",status:"Operational"},{label:"Specialist capability",status:"Planned"}] },
+  { name:"People", stages:[{label:"DFIR hiring",status:"In Progress"},{label:"Architecture certification",status:"Planned"},{label:"Awareness",status:"Operational"},{label:"Specialist capability",status:"In Progress"}] },
 ];
 
 export const progressTrend = [{period:"Q4 25",value:18},{period:"Q1 26",value:24},{period:"Q2 26",value:31},{period:"Q3 26",value:null}];

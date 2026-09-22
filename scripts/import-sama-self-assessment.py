@@ -18,14 +18,14 @@ CAPABILITIES = {
     "Cyber Security Awareness": ["KnowBe4"],
     "Cyber Security Training": ["KnowBe4", "Professional training and certifications"],
     "Asset Management": ["ManageEngine ServiceDesk Plus"],
-    "Infrastructure Security": ["Netskope", "Fortinet / FortiGate"],
-    "Application Security": ["Netskope", "Secure SDLC / SAST"],
+    "Infrastructure Security": ["Netskope", "Fortinet / FortiGate", "Application whitelisting"],
+    "Application Security": ["Netskope", "Secure SDLC / SAST", "Application whitelisting"],
     "Bring Your Own Device (BYOD)": ["BlackBerry UEM", "Microsoft Conditional Access"],
-    "Secure Disposal of Information Assets": ["BitRaser"],
+    "Secure Disposal of Information Assets": ["BitRaser", "DIPU secure disposal"],
     "Vulnerability Management": ["Qualys"],
     "Cyber Security Incident Management": ["Cognna", "DFIR capability"],
-    "Cyber Security Event Management": ["Cognna"],
-    "Threat Management": ["CTM360", "Cognna"],
+    "Cyber Security Event Management": ["Cognna", "SOC monitoring", "Threat hunting"],
+    "Threat Management": ["CTM360", "Cognna", "Threat hunting"],
     "Cyber Security Architecture": ["Architecture governance", "SABSA / TOGAF development"],
     "Identity and Access Management": ["Microsoft Entra ID", "BlackBerry UEM"],
 }
@@ -90,25 +90,33 @@ for row_number, row in enumerate(sheet.iter_rows(min_row=3, max_col=13, values_o
     dependencies = []
 
     if clean(subdomain) == "Vulnerability Management":
-        dependencies = ["SAMA No Objection / NOC", "Approved vulnerability-management process", "Scanning and remediation evidence"]
+        dependencies = ["Final implementation step", "SAMA No Objection / NOC", "Validated scanning and remediation evidence"]
         status, completion = "In Progress", 40
-        required_action = "Complete the NOC dependency and validate scanning, remediation and reporting evidence."
+        required_action = "Complete the final Qualys implementation step and validate scanning, remediation and reporting evidence."
     elif clean(subdomain) == "Cyber Security Architecture":
-        dependencies = ["Management approval", "IT HLD/LLD inputs", "Architecture capability development"]
+        dependencies = ["Architecture certification and development plan", "IT HLD/LLD inputs", "Target-state governance"]
     elif clean(subdomain) in {"Infrastructure Security", "Vulnerability Management"}:
         dependencies = ["Network segmentation", "Asset visibility", "Validated operating evidence"]
     elif clean(subdomain) == "Cyber Security Incident Management":
-        dependencies = ["DFIR specialist capacity", "Approved incident procedures", "Exercise and incident evidence"]
+        dependencies = ["DFIR analyst hiring", "Approved incident procedures", "Exercise and incident evidence"]
     elif clean(subdomain) == "Cyber Security in Project Management":
-        dependencies = ["Project assessment register", "Initiation and closure evidence", "Risk-owner approval"]
+        dependencies = ["Project assessment register", "Initiation evidence", "Risk-owner approval"]
 
     implementation = comment or "No implementation narrative is recorded in the workbook; control evidence requires validation."
     if clean(subdomain) == "Cyber Security Awareness":
         implementation = "KnowBe4 cybersecurity awareness has been completed for all employees. The completion export and effectiveness metrics should remain linked as evidence."
         evidence = ["KnowBe4 awareness completed for all employees — confirmed by Head of Cybersecurity; platform export requires attachment"]
     elif clean(subdomain) == "Cyber Security in Project Management":
-        implementation = "Internal and external cybersecurity risk assessments are required and tracked at project initiation and project closure. Project records and approvals should remain linked as evidence."
-        evidence = ["Internal and external project risk assessments at initiation and closure — confirmed by Head of Cybersecurity; records require attachment"]
+        implementation = "A cybersecurity risk assessment is issued before each project and requires approval. For third-party projects, both internal and external assessments are completed, including a questionnaire completed by the third party."
+        evidence = ["Pre-project cybersecurity risk assessment, approval record, internal assessment and third-party completed external questionnaire — confirmed by Head of Cybersecurity; records require attachment"]
+    elif clean(subdomain) in {"Cyber Security Event Management", "Threat Management"}:
+        implementation = f"{implementation} Operational SOC monitoring and threat-hunting capability are confirmed; current service and activity evidence should remain linked."
+    elif clean(subdomain) == "Infrastructure Security":
+        implementation = f"{implementation} Netskope is implemented across all Muhlah devices and applicable third-party devices. Application whitelisting is operational."
+    elif clean(subdomain) == "Secure Disposal of Information Assets":
+        implementation = f"{implementation} BitRaser and DIPU secure-disposal capabilities are in place; disposal and destruction records should remain linked."
+    elif clean(subdomain) == "Cyber Security Architecture":
+        implementation = f"{implementation} The Head of Cybersecurity plans to complete architecture certification and apply the capability within Muhlah; certification is not yet recorded as completed."
 
     controls.append({
         "id": control_id,

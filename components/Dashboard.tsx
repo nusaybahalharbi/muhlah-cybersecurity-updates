@@ -112,15 +112,16 @@ function CapabilityView() {
     ["Governance established", "Independent cybersecurity reporting, CEO oversight and a CCO-chaired Cybersecurity Committee."],
     ["SAMA assessment expanded", "All 249 controls are now represented with domain, subdomain, maturity, evidence reference and dependencies."],
     ["Human risk coverage", "KnowBe4 awareness completed for all employees, with completion evidence retained for assurance."],
-    ["Project security gates", "Internal and external cybersecurity assessments embedded at project initiation and closure."],
-    ["Security visibility improved", "SOC monitoring, web/cloud controls, external attack-surface monitoring and UEM capabilities introduced."],
+    ["Project security gates", "A risk assessment and approval are required before each project; third parties complete internal and external assessment inputs."],
+    ["Security visibility improved", "SOC monitoring and threat hunting are operational, with Netskope implemented across Muhlah and applicable third-party devices."],
+    ["Endpoint execution controlled", "Application whitelisting is implemented, supported by established endpoint and secure-disposal capabilities."],
     ["Evidence repository strengthened", "Documentation, risk assessments and control evidence have materially increased across departments."],
   ];
   const hiring = [
-    ["Senior DFIR Specialist", "Planned", "Build incident response and forensic depth"],
+    ["DFIR Analyst", "In Progress", "Active hiring to build incident response and forensic depth"],
     ["SOC / DFIR L2 capability", "Planned", "Strengthen investigation and escalation coverage"],
     ["Senior Cybersecurity Architect", "On Hold", "Board decision; capability supported through training in the interim"],
-    ["Architecture development", "Pending Approval", "SABSA / TOGAF training to strengthen internal governance"],
+    ["Architecture development", "Planned", "Complete architecture certification and apply the capability within Muhlah"],
   ];
   return <main>
     <SectionHeading eyebrow="DELIVERY & CAPABILITY" title="Achievements, solutions and workforce" copy="The security capabilities introduced, progress delivered and people decisions needed to sustain the programme."/>
