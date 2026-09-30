@@ -2,6 +2,20 @@ import type { SamaControlRecord } from "../types";
 
 export type MaturitySelection = 1 | 2 | 3 | 4 | 5 | "NA";
 export type MaturityValues = Record<string, MaturitySelection>;
+export function maturityAssessmentStatus(value: MaturitySelection): SamaControlRecord["status"] {
+  if (value === "NA") return "Not Applicable";
+  if (value >= 3) return "Completed";
+  return value === 2 ? "In Progress" : "Not Started";
+}
+
+export function applyMaturity(controls: readonly SamaControlRecord[], values: MaturityValues): SamaControlRecord[] {
+  return controls.map(control => {
+    const value = values[control.id];
+    return { ...control, sourceMaturity: value === "NA" ? null : value,
+      status: maturityAssessmentStatus(value), completion: value !== "NA" && value >= 3 ? 100 : 0,
+      applicability: value === "NA" ? "Not Applicable" : "Applicable" };
+  });
+}
 type Control = Pick<SamaControlRecord, "id" | "sourceMaturity" | "status">;
 
 export function isMaturitySelection(value: unknown): value is MaturitySelection {
