@@ -1,12 +1,26 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { resolveMaturity, summarizeMaturity } from '../lib/sama-maturity.ts';
+import { applyMaturity, maturityAssessmentStatus, resolveMaturity, summarizeMaturity } from '../lib/sama-maturity.ts';
 
 const controls = [
   { id: 'a', sourceMaturity: 2, status: 'In Progress' },
   { id: 'b', sourceMaturity: 3, status: 'In Progress' },
   { id: 'c', sourceMaturity: null, status: 'Not Applicable' },
 ];
+
+test('status follows selected maturity rather than the workbook status', () => {
+  assert.equal(maturityAssessmentStatus(1), 'Not Started');
+  assert.equal(maturityAssessmentStatus(2), 'In Progress');
+  for (const level of [3, 4, 5]) assert.equal(maturityAssessmentStatus(level), 'Completed');
+  assert.equal(maturityAssessmentStatus('NA'), 'Not Applicable');
+  const result = applyMaturity(controls, { a: 3, b: 2, c: 'NA' });
+  assert.equal(result[0].status, 'Completed');
+  assert.equal(result[0].completion, 100);
+  assert.equal(result[1].status, 'In Progress');
+  assert.equal(result[1].completion, 0);
+  assert.equal(result[2].applicability, 'Not Applicable');
+  assert.equal(controls[0].status, 'In Progress');
+});
 
 test('saved ML3 selections change the progress and survive reloading', () => {
   const baseline = resolveMaturity(controls, null);

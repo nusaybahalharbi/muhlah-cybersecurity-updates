@@ -3,7 +3,7 @@
 import { useMemo, useSyncExternalStore } from "react";
 import controls from "@/data/sama-controls.json";
 import type { SamaControlRecord } from "@/types";
-import { resolveMaturity, summarizeMaturity, type MaturitySelection } from "@/lib/sama-maturity";
+import { applyMaturity, resolveMaturity, summarizeMaturity, type MaturitySelection } from "@/lib/sama-maturity";
 
 const records = controls as SamaControlRecord[];
 const storageKey = "muhlah-sama-maturity-v1";
@@ -36,5 +36,6 @@ export function useSamaMaturity() {
   const serialized = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
   const maturity = useMemo(() => resolveMaturity(records, serialized), [serialized]);
   const summary = useMemo(() => summarizeMaturity(records, maturity), [maturity]);
-  return { maturity, summary, saveMaturity };
+  const assessedControls = useMemo(() => applyMaturity(records, maturity), [maturity]);
+  return { maturity, summary, saveMaturity, assessedControls };
 }
