@@ -9,11 +9,12 @@ import { managementActions, solutions, vendors } from "@/data/dashboard";
 import type { SamaControlRecord } from "@/types";
 import { useSamaMaturity } from "@/components/useSamaMaturity";
 import { summarizeMaturity } from "@/lib/sama-maturity";
+import CeoTimeline from "@/components/CeoTimeline";
 import WeeklyProgress from "@/components/WeeklyProgress";
 import { SamaControls } from "@/components/SamaCompliance";
 
 const controls = samaControls as SamaControlRecord[];
-const tabs = ["Executive overview", "Weekly progress", "SAMA & ML3", "Third-party risk", "Governance", "Capability & people"] as const;
+const tabs = ["Executive overview", "Weekly progress", "CEO timeline", "SAMA & ML3", "Third-party risk", "Governance", "Capability & people"] as const;
 type Tab = (typeof tabs)[number];
 
 const statusMeta: Record<string, { label: string; className: string }> = {
@@ -46,7 +47,7 @@ function MetricCard({ label, value, detail, accent }: { label: string; value: st
 
 function ExecutiveHeader({ active, onChange, onMenu }: { active: Tab; onChange: (tab: Tab) => void; onMenu: () => void }) {
   return <>
-    <div className="confidential-bar"><span>CONFIDENTIAL · INTERNAL MUHLAH CYBERSECURITY USE ONLY</span><span>{active === "Weekly progress" ? "Reporting period · Past week" : "Reporting date · 22 SEP 2026"}</span></div>
+    <div className="confidential-bar"><span>CONFIDENTIAL · INTERNAL MUHLAH CYBERSECURITY USE ONLY</span><span>{active === "CEO timeline" ? "Planning horizon · OCT–DEC 2026" : active === "Weekly progress" ? "Reporting period · Past week" : "Reporting date · 22 SEP 2026"}</span></div>
     <header className="executive-header">
       <button className="mobile-menu" onClick={onMenu} aria-label="Open navigation"><Menu size={20}/></button>
       <div className="brand"><Image className="brand-logo" src="/muhlah-logo.png" alt="Muhlah logo" width={45} height={49} /><div><strong>Muhlah</strong><small>Cybersecurity Progress &amp; Compliance</small></div></div>
@@ -142,5 +143,6 @@ function CapabilityView() {
 export default function Dashboard({ initialTab = "Executive overview" }: { initialTab?: Tab } = {}) {
   const [active, setActive] = useState<Tab>(initialTab);
   const [menuOpen, setMenuOpen] = useState(false);
-  return <div className="dashboard-shell"><ExecutiveHeader active={active} onChange={setActive} onMenu={() => setMenuOpen(true)}/><MobileNav open={menuOpen} active={active} onChange={setActive} onClose={() => setMenuOpen(false)}/>{active === "Executive overview" && <Overview onChange={setActive}/>} {active === "Weekly progress" && <WeeklyProgress/>}{active === "SAMA & ML3" && <SamaView/>}{active === "Third-party risk" && <VendorView/>}{active === "Governance" && <GovernanceView/>}{active === "Capability & people" && <CapabilityView/>}<footer className="executive-footer"><span>CONFIDENTIAL · INTERNAL MUHLAH CYBERSECURITY USE ONLY</span><span>Progress reflects current assessment data and must not be interpreted as regulatory certification.</span></footer></div>;
+  return <div className="dashboard-shell"><ExecutiveHeader active={active} onChange={setActive} onMenu={() => setMenuOpen(true)}/><MobileNav open={menuOpen} active={active} onChange={setActive} onClose={() => setMenuOpen(false)}/>{active === "Executive overview" && <Overview onChange={setActive}/>} {active === "Weekly progress" && <WeeklyProgress/>}{active === "CEO timeline" && <CeoTimeline/>}{active === "SAMA & ML3" && <SamaView/>}{active === "Third-party risk" && <VendorView/>}{active === "Governance" && <GovernanceView/>}{active === "Capability & people" && <CapabilityView/>}<footer className="executive-footer"><span>CONFIDENTIAL · INTERNAL MUHLAH CYBERSECURITY USE ONLY</span><span>Progress reflects current assessment data and must not be interpreted as regulatory certification.</span></footer></div>;
 }
+

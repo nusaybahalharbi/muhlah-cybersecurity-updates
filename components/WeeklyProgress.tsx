@@ -14,6 +14,7 @@ export default function WeeklyProgress() {
       </div>
     </section>
 
+    <a className="weekly-jump" href="/ceo-timeline" style={{margin: "24px 0", display: "inline-flex"}}>View the CEO delivery timeline · October–December 2026 <ArrowUpRight size={16}/></a>
     <section className="weekly-metrics" aria-label="Key weekly figures">
       <article><span>DELIVERY</span><strong>02<small>implementations</small></strong><p>ManageEngine &amp; DLP</p></article>
       <article><span>PEOPLE</span><strong>03<small>interviews</small></strong><p>Candidate interviews completed</p></article>
