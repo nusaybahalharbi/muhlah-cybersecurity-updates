@@ -3,6 +3,8 @@
 import { useEffect, useMemo, useState } from "react";
 import { Cell, Pie, PieChart, ResponsiveContainer, Tooltip } from "recharts";
 import { AlertTriangle, ArrowUpRight, CheckCircle2, ChevronDown, Database, FileCheck2, Filter, Link2, Search, ShieldCheck, X } from "lucide-react";
+import { useSamaMaturity } from "@/components/useSamaMaturity";
+import type { MaturitySelection } from "@/lib/sama-maturity";
 import rawControls from "@/data/sama-controls.json";
 import { SamaAssessmentStatus, SamaControlRecord } from "@/types";
 
@@ -11,11 +13,9 @@ const statuses: SamaAssessmentStatus[] = ["Completed","Partially Completed","In 
 const statusColor: Record<string,string> = {"Completed":"#4fffd2","Partially Completed":"#ffcb69","In Progress":"#65a2ff","Not Started":"#ff6b7a","Blocked / Waiting for Approval":"#b393ff","Not Applicable":"#8b99aa","Requires Evidence / Verification":"#ff9e5c"};
 const shortStatus: Record<string,string> = {"Blocked / Waiting for Approval":"Dependency / approval","Requires Evidence / Verification":"Evidence / verification"};
 const scoreWeight: Record<SamaAssessmentStatus,number> = {"Completed":100,"Partially Completed":60,"In Progress":40,"Not Started":0,"Blocked / Waiting for Approval":30,"Not Applicable":0,"Requires Evidence / Verification":20};
-type MaturitySelection = 1 | 2 | 3 | 4 | 5 | "NA";
 const maturityOptions: {value:MaturitySelection; short:string; label:string}[] = [
   {value:1,short:"ML1",label:"Ad hoc"},{value:2,short:"ML2",label:"Repeatable / informal"},{value:3,short:"ML3",label:"Defined / formal"},{value:4,short:"ML4",label:"Managed / measurable"},{value:5,short:"ML5",label:"Adaptive"},{value:"NA",short:"N/A",label:"Not applicable"},
 ];
-const maturityStorageKey="muhlah-sama-maturity-v1";
 
 function StatusPill({value}:{value:SamaAssessmentStatus}) { return <span className="sama-status" style={{"--status":statusColor[value]} as React.CSSProperties}><i/>{shortStatus[value]||value}</span> }
 function titleForDomain(name:string){ return name.replace("Cyber Security ","").replace(" and "," & ") }
@@ -50,19 +50,25 @@ export function SamaExecutive(){
 
 export function SamaControls(){
   const [query,setQuery]=useState(""); const [domain,setDomain]=useState("All domains"); const [status,setStatus]=useState("All statuses"); const [priority,setPriority]=useState("All priorities"); const [maturityFilter,setMaturityFilter]=useState("All maturity"); const [selected,setSelected]=useState<SamaControlRecord|null>(null); const [page,setPage]=useState(1); const size=20;
-  const [maturity,setMaturity]=useState<Record<string,MaturitySelection>>(()=>Object.fromEntries(controls.map(c=>[c.id,c.status==="Not Applicable"?"NA":(c.sourceMaturity as MaturitySelection)||1])));
+  const { maturity, summary, saveMaturity } = useSamaMaturity();
+  const [saveError, setSaveError] = useState("");
   const [unlocked,setUnlocked]=useState(false); const [pin,setPin]=useState(""); const [authError,setAuthError]=useState("");
-  useEffect(()=>{const timer=window.setTimeout(()=>{try{const saved=JSON.parse(localStorage.getItem(maturityStorageKey)||"{}");setMaturity(current=>({...current,...saved}))}catch{};fetch("/api/sama-auth").then(r=>r.json()).then(r=>setUnlocked(Boolean(r.authenticated))).catch(()=>{})},0);return()=>window.clearTimeout(timer)},[]);
-  const updateMaturity=(id:string,value:MaturitySelection)=>{if(!unlocked)return;setMaturity(current=>{const next={...current,[id]:value};localStorage.setItem(maturityStorageKey,JSON.stringify(next));window.dispatchEvent(new CustomEvent("sama-maturity-change",{detail:next}));return next})};
+  useEffect(()=>{const timer=window.setTimeout(()=>{fetch("/api/sama-auth").then(r=>r.json()).then(r=>setUnlocked(Boolean(r.authenticated))).catch(()=>{})},0);return()=>window.clearTimeout(timer)},[]);
+  const updateMaturity = (id: string, value: MaturitySelection) => {
+    if (!unlocked) return;
+    try { saveMaturity(id, value); setSaveError(""); }
+    catch { setSaveError("Could not save this change. Allow browser storage and try again."); }
+  };
   const unlock=async(e:React.FormEvent)=>{e.preventDefault();setAuthError("");const response=await fetch("/api/sama-auth",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({pin})});if(response.ok){setUnlocked(true);setPin("")}else setAuthError("Incorrect PIN")};
   const domains=["All domains",...new Set(controls.map(c=>c.domain))];
   const filtered=useMemo(()=>controls.filter(c=>(domain==="All domains"||c.domain===domain)&&(status==="All statuses"||c.status===status)&&(priority==="All priorities"||c.priority===priority)&&(maturityFilter==="All maturity"||String(maturity[c.id])===maturityFilter)&&(!query||[c.id,c.subdomain,c.requirement,c.owner,c.gap].join(" ").toLowerCase().includes(query.toLowerCase()))),[query,domain,status,priority,maturityFilter,maturity]);
-  const applicable=controls.filter(c=>maturity[c.id]!=="NA").length; const ml3plus=controls.filter(c=>typeof maturity[c.id]==="number"&&Number(maturity[c.id])>=3).length;
+  const { applicable, ml3plus } = summary;
   const pages=Math.max(1,Math.ceil(filtered.length/size)); const visible=filtered.slice((page-1)*size,page*size);
   const change=(fn:(v:string)=>void)=>(e:React.ChangeEvent<HTMLSelectElement>)=>{fn(e.target.value);setPage(1)};
-  return <div className="sama-module"><ModuleTitle eyebrow="SAMA CSF compliance" title="Control assessment" text={`Select one maturity level per control. ${ml3plus} of ${applicable} applicable controls are marked ML3 or above. Selections are saved in this browser.`} count={`${filtered.length} of ${controls.length}`}/>
+  return <div className="sama-module"><ModuleTitle eyebrow="SAMA CSF compliance" title="Control assessment" text={`Select one maturity level per control. ${ml3plus} of ${applicable} applicable controls are marked ML3 or above. Changes save immediately and update assessment progress in this browser.`} count={`${filtered.length} of ${controls.length}`}/>
     <div className="domain-access">{domains.slice(1).map((name,index)=><button key={name} className={domain===name?"active":""} onClick={()=>{setDomain(name);setPage(1)}}><span>0{index+1}</span><strong>{titleForDomain(name)}</strong><small>{controls.filter(c=>c.domain===name).length} controls</small></button>)}</div>
-    <div className={`editor-access ${unlocked?"unlocked":""}`}>{unlocked?<><ShieldCheck size={17}/><div><strong>Editing unlocked</strong><span>Maturity changes are enabled for this session.</span></div><button onClick={async()=>{await fetch("/api/sama-auth",{method:"DELETE"});setUnlocked(false)}}>Lock editing</button></>:<form onSubmit={unlock}><ShieldCheck size={17}/><div><strong>PIN-protected editing</strong><span>Enter your PIN to change maturity selections.</span></div><input type="password" inputMode="numeric" maxLength={12} value={pin} onChange={e=>setPin(e.target.value)} placeholder="PIN" aria-label="Editor PIN"/><button type="submit">Unlock</button>{authError&&<small>{authError}</small>}</form>}</div>
+    <div className={`editor-access ${unlocked?"unlocked":""}`}>{unlocked?<><ShieldCheck size={17}/><div><strong>Editing unlocked</strong><span>Changes save immediately. Lock editing only prevents further changes.</span></div><button onClick={async()=>{await fetch("/api/sama-auth",{method:"DELETE"});setUnlocked(false)}}>Lock editing</button></>:<form onSubmit={unlock}><ShieldCheck size={17}/><div><strong>PIN-protected editing</strong><span>Enter your PIN to change maturity selections.</span></div><input type="password" inputMode="numeric" maxLength={12} value={pin} onChange={e=>setPin(e.target.value)} placeholder="PIN" aria-label="Editor PIN"/><button type="submit">Unlock</button>{authError&&<small>{authError}</small>}</form>}</div>
+    {saveError && <p role="alert">{saveError}</p>}
     <div className="control-toolbar"><label className="control-search"><Search size={16}/><input value={query} onChange={e=>{setQuery(e.target.value);setPage(1)}} placeholder="Search control, gap, owner or requirement"/></label><Select value={domain} values={domains} onChange={change(setDomain)}/><Select value={maturityFilter} values={["All maturity","1","2","3","4","5","NA"]} onChange={change(setMaturityFilter)}/><Select value={status} values={["All statuses",...statuses]} onChange={change(setStatus)}/><Select value={priority} values={["All priorities","High","Medium","Low"]} onChange={change(setPriority)}/></div>
     <div className="sama-table-wrap"><table className="sama-table"><thead><tr><th>Control</th><th>Domain / family</th><th>Maturity check</th><th>Status</th><th>Evidence</th><th>Owner</th><th>Priority</th><th>Target</th></tr></thead><tbody>{visible.map(c=><tr key={c.id} onClick={()=>setSelected(c)}><td><strong>{c.id}</strong><span>{c.requirement}</span></td><td><strong>{c.subdomain}</strong><span>{titleForDomain(c.domain)}</span></td><td onClick={e=>e.stopPropagation()}><MaturityCheck value={maturity[c.id]} disabled={!unlocked} onChange={value=>updateMaturity(c.id,value)}/></td><td><StatusPill value={c.status}/></td><td><strong>{c.existingEvidence.length}/{c.requiredEvidence.length||c.missingEvidence.length}</strong><span>{c.evidenceStatus}</span></td><td>{c.owner}</td><td><span className={`priority-tag ${c.priority.toLowerCase()}`}>{c.priority}</span></td><td>{c.targetDate}</td></tr>)}</tbody></table></div>
     <div className="pagination"><span>Page {page} of {pages}</span><div><button disabled={page===1} onClick={()=>setPage(p=>p-1)}>Previous</button><button disabled={page===pages} onClick={()=>setPage(p=>p+1)}>Next</button></div></div>
