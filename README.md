@@ -12,6 +12,7 @@ All initial content is planning/demo data derived from the project brief. Unveri
 
 ## Features
 
+- Cybersecurity weekly progress at `/weekly-progress`, also available in desktop and mobile navigation, with completed work, procurement and external dependencies
 - Executive KPI command center and management decision queue
 - Workbook-backed SAMA CSF module with all 249 unique controls across 35 subdomains and four domains
 - Executive SAMA progress, control-level assessment, evidence management, remediation and technology mapping
@@ -50,6 +51,8 @@ Copy `.env.example` to `.env.local` and replace placeholders only in the local/r
 The authentication variables are architecture placeholders; production authentication is not implemented in this initial release.
 
 ## Data updates
+
+Weekly operational updates are maintained in `data/weekly-progress.ts`. These records reflect Muhlah’s supplied update; pending purchases, documents and approvals remain distinct from reported completed work. The black-and-yellow shell and weekly page styling are in `app/cyber-theme.css`.
 
 Update validated operational records in `data/dashboard.ts` and SAMA assessment records in `data/sama-controls.json`. Preserve the controlled statuses and use `Requires Evidence / Verification` for uncertainty. Do not mark a capability compliant because a product or contract exists. See `docs/UPDATING.md`.
 
