@@ -6,7 +6,24 @@ import type { SamaControlRecord } from "@/types";
 import { applyMaturity, resolveMaturity, summarizeMaturity, type MaturitySelection } from "@/lib/sama-maturity";
 
 const records = controls as SamaControlRecord[];
-const storageKey = "muhlah-sama-maturity-v1";
+
+// Scope browser overrides to the exact workbook-backed maturity dataset.
+// When a newly imported assessment changes any control maturity/applicability,
+// the key changes and stale browser selections can no longer mask the new source.
+function datasetVersion(rows: readonly SamaControlRecord[]) {
+  const source = rows
+    .map(control => `${control.id}:${control.status === "Not Applicable" ? "NA" : control.sourceMaturity ?? "U"}`)
+    .join("|");
+
+  let hash = 2166136261;
+  for (let index = 0; index < source.length; index += 1) {
+    hash ^= source.charCodeAt(index);
+    hash = Math.imul(hash, 16777619);
+  }
+  return (hash >>> 0).toString(36);
+}
+
+const storageKey = `muhlah-sama-maturity-v2-${datasetVersion(records)}`;
 const changeEvent = "sama-maturity-change";
 
 function getSnapshot() {
