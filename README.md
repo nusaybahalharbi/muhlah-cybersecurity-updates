@@ -52,9 +52,9 @@ The authentication variables are architecture placeholders; production authentic
 
 ## Data updates
 
-Weekly operational updates are maintained in `data/weekly-progress.ts`. These records reflect Muhlah’s supplied update; pending purchases, documents and approvals remain distinct from reported completed work. The black-and-yellow shell and weekly page styling are in `app/cyber-theme.css`.
+All initiative views read `data/initiatives.ts`. The enterprise design system is in `app/enterprise.css`. Target dates are not confirmed commitments.
 
-Update validated operational records in `data/dashboard.ts` and SAMA assessment records in `data/sama-controls.json`. Preserve the controlled statuses and use `Requires Evidence / Verification` for uncertainty. Do not mark a capability compliant because a product or contract exists. See `docs/UPDATING.md`.
+Update validated initiative records in `data/initiatives.ts` and vendor assurance in `data/dashboard.ts` and SAMA assessment records in `data/sama-controls.json`. Preserve the controlled statuses and use `Requires Evidence / Verification` for uncertainty. Do not mark a capability compliant because a product or contract exists. See `docs/UPDATING.md`.
 
 ## SAMA assessment methodology
 
