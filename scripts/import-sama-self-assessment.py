@@ -61,7 +61,7 @@ def status_for(maturity, label):
     if clean(label).upper().startswith("NA"):
         return "Not Applicable", 0
     if maturity and maturity >= 3:
-        return "Partially Completed", 60
+        return "Requires Evidence / Verification", 0
     if maturity == 2:
         return "In Progress", 40
     if maturity == 1:
@@ -91,7 +91,6 @@ for row_number, row in enumerate(sheet.iter_rows(min_row=3, max_col=13, values_o
 
     if clean(subdomain) == "Vulnerability Management":
         dependencies = ["Final implementation step", "SAMA No Objection / NOC", "Validated scanning and remediation evidence"]
-        status, completion = "In Progress", 40
         required_action = "Complete the final Qualys implementation step and validate scanning, remediation and reporting evidence."
     elif clean(subdomain) == "Cyber Security Architecture":
         dependencies = ["Architecture certification and development plan", "IT HLD/LLD inputs", "Target-state governance"]
@@ -103,20 +102,7 @@ for row_number, row in enumerate(sheet.iter_rows(min_row=3, max_col=13, values_o
         dependencies = ["Project assessment register", "Initiation evidence", "Risk-owner approval"]
 
     implementation = comment or "No implementation narrative is recorded in the workbook; control evidence requires validation."
-    if clean(subdomain) == "Cyber Security Awareness":
-        implementation = "KnowBe4 cybersecurity awareness has been completed for all employees. The completion export and effectiveness metrics should remain linked as evidence."
-        evidence = ["KnowBe4 awareness completed for all employees — confirmed by Head of Cybersecurity; platform export requires attachment"]
-    elif clean(subdomain) == "Cyber Security in Project Management":
-        implementation = "A cybersecurity risk assessment is issued before each project and requires approval. For third-party projects, both internal and external assessments are completed, including a questionnaire completed by the third party."
-        evidence = ["Pre-project cybersecurity risk assessment, approval record, internal assessment and third-party completed external questionnaire — confirmed by Head of Cybersecurity; records require attachment"]
-    elif clean(subdomain) in {"Cyber Security Event Management", "Threat Management"}:
-        implementation = f"{implementation} Operational SOC monitoring and threat-hunting capability are confirmed; current service and activity evidence should remain linked."
-    elif clean(subdomain) == "Infrastructure Security":
-        implementation = f"{implementation} Netskope is implemented across all Muhlah devices and applicable third-party devices. Application whitelisting is operational."
-    elif clean(subdomain) == "Secure Disposal of Information Assets":
-        implementation = f"{implementation} BitRaser and DIPU secure-disposal capabilities are in place; disposal and destruction records should remain linked."
-    elif clean(subdomain) == "Cyber Security Architecture":
-        implementation = f"{implementation} The Head of Cybersecurity plans to complete architecture certification and apply the capability within Muhlah; certification is not yet recorded as completed."
+    missing_evidence = ["Validate the referenced evidence file and operating effectiveness"] if evidence else ["Control-specific evidence has not been linked", "Current operating evidence", "Control-owner validation"]
 
     controls.append({
         "id": control_id,
@@ -132,18 +118,18 @@ for row_number, row in enumerate(sheet.iter_rows(min_row=3, max_col=13, values_o
         "completion": completion,
         "requiredEvidence": ["Approved control documentation", "Current operating evidence", "Control-owner validation"],
         "existingEvidence": evidence,
-        "missingEvidence": [] if evidence else ["Control-specific evidence has not been linked"],
+        "missingEvidence": missing_evidence,
         "gap": gap,
         "requiredAction": required_action,
         "owner": OWNERS.get(clean(subdomain), "Cybersecurity / Control Owner"),
         "priority": "High" if clean(subdomain) in {"Cyber Security Architecture", "Vulnerability Management", "Infrastructure Security", "Cyber Security Incident Management", "Cloud Computing"} else "Medium",
         "targetDate": target_date.isoformat() if hasattr(target_date, "isoformat") else clean(target_date) or "Needs Verification",
         "dependencies": dependencies,
-        "notes": f"Source: SAMA-CSF-SelfAssessment AUG 24.xlsx, row {row_number}. Workbook status: {clean(current_status) or 'blank'}. Workbook maturity: {clean(maturity_label) or 'blank'}.",
+        "notes": f"Source: {SOURCE.name}, row {row_number}. Workbook status: {clean(current_status) or 'blank'}. Workbook maturity: {clean(maturity_label) or 'blank'}.",
         "sourceMaturity": maturity,
         "sourceStatus": clean(current_status) or "Blank",
         "capabilities": capabilities,
-        "evidenceStatus": "Referenced — validate" if evidence else "Missing",
+        "evidenceStatus": "Referenced — not verified" if evidence else "Missing",
         "evidenceOwner": OWNERS.get(clean(subdomain), "Cybersecurity / Control Owner"),
         "evidenceLocation": "Referenced in workbook" if evidence else "Not linked",
         "dateCollected": "",

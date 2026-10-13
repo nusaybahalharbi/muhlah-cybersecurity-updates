@@ -4,7 +4,7 @@ export type MaturitySelection = 1 | 2 | 3 | 4 | 5 | "NA";
 export type MaturityValues = Record<string, MaturitySelection>;
 export function maturityAssessmentStatus(value: MaturitySelection): SamaControlRecord["status"] {
   if (value === "NA") return "Not Applicable";
-  if (value >= 3) return "Completed";
+  if (value >= 3) return "Requires Evidence / Verification";
   return value === 2 ? "In Progress" : "Not Started";
 }
 
