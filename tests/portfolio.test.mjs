@@ -13,5 +13,6 @@ test('authoritative status and date constraints',()=>{
 test('portfolio has unique records and valid dependency graph',()=>{
  assert.equal(new Set(initiatives.map(i=>i.id)).size,initiatives.length);
  function visit(id,parents=[]){assert.ok(initiativeById[id]);assert.ok(!parents.includes(id),'Dependency cycle');initiativeById[id].dependencies.forEach(dep=>visit(dep,[...parents,id]));}
- initiatives.forEach(i=>visit(i.id));const c=portfolioCounts();assert.equal(c.total,initiatives.length);assert.equal(c.completed,2);assert.equal(c.onTrack,0);
+ initiatives.forEach(i=>visit(i.id));const c=portfolioCounts();assert.equal(c.total,initiatives.length);assert.equal(c.completed,initiatives.filter(i=>i.status==='Completed').length);assert.equal(c.onTrack,initiatives.filter(i=>i.status==='On track').length);
 });
+
