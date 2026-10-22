@@ -9,8 +9,8 @@ const lanes = [
   { title:"Critical infrastructure chain", caption:"Sequence confirmed · delivery dates remain unconfirmed", ids:["switches","segmentation","pt","red-team"] },
   { title:"Governance gates", caption:"Approvals and operating evidence required", ids:["document-approvals","change-process","change-enforcement"] },
   { title:"Technology actions", caption:"Conditional target · 31 December 2026", ids:["qualys","mdm","netskope-licenses","windows-activation"] },
-  { title:"Capacity and confirmation", caption:"Open ownership, evidence or delivery questions", ids:["architecture","recruitment","email-backup","zoho","data-classification","grc-scope","asset-labels"] },
-  { title:"Current capabilities", caption:"Management-confirmed or documented delivery · effectiveness evidence still required", ids:["m365","dlp","manageengine","netskope","bitraser","dipu","asset-discovery","knowbe4","assessment-dashboard"] },
+  { title:"Capacity and confirmation", caption:"Open ownership, evidence or delivery questions", ids:["architecture","recruitment","asset-labels","office-shredder","email-backup","zoho","data-classification","grc-scope"] },
+  { title:"Current capabilities", caption:"Management-confirmed or documented delivery · effectiveness evidence still required", ids:["m365","dlp","manageengine","netskope","bitraser","dipu","asset-discovery","knowbe4","rbac","jml","assessment-dashboard"] },
 ] as const;
 
 export default function CeoTimeline(){

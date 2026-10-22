@@ -9,9 +9,9 @@ const previousBaseline = [
   ["Risk-management process","Established"], ["Change Advisory Board","Reported operational"],
   ["Policies / standards","26 reported developed"], ["Asset inventory and visitor register","Established"],
 ] as const;
-const capabilities = ["m365","dlp","manageengine","netskope","bitraser","dipu","asset-discovery","knowbe4","assessment-dashboard"];
+const capabilities = ["m365","dlp","manageengine","netskope","bitraser","dipu","asset-discovery","knowbe4","rbac","jml","assessment-dashboard"];
 const technologyActions = ["switches","segmentation","qualys","mdm","netskope-licenses","windows-activation"];
-const confirmations = ["email-backup","zoho","data-classification","grc-scope","asset-labels"];
+const confirmations = ["email-backup","zoho","data-classification","grc-scope"];
 const validationGaps = [
   ["3.3.14-4.g","Network packet analysis","Validate NPA/NDR capability and coverage"],
   ["3.3.15-4.a–d","Incident-response readiness","Validate team, training, forensic support and restricted workspace"],
